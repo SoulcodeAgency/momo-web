@@ -10,8 +10,7 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-  			background: 'var(--background)',
-  			foreground: 'var(--foreground)'
+				primary: 'rgb(50 187 165)',
   		},
   		fontFamily: {
   			sans: ["var(--font-geist-sans)"],
