@@ -46,7 +46,7 @@ export default function StickyHeaderProductLandingPage() {
                 <CardTitle>Analytics Dashboard</CardTitle>
               </CardHeader>
               <CardContent>
-                Gain insights into your team's performance with detailed reports.
+                Gain insights into your team&apos;s performance with detailed reports.
               </CardContent>
             </Card>
           </div>
