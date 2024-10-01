@@ -1,6 +1,9 @@
+import { UniformContext } from '@uniformdev/canvas-next-rsc';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { VercelToolbar } from '@vercel/toolbar/next';
+import { Suspense } from 'react';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,7 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <UniformContext>
+          {children}
+        </UniformContext>
+
+        <Suspense fallback={<p>Loading Vercel Toolbar ...</p>}>
+          <VercelToolbar />
+        </Suspense>
       </body>
     </html>
   );
