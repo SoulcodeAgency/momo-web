@@ -11,14 +11,16 @@ import {
 export default async function Home(props: PageParameters) {
   const route = await retrieveRoute(props);
   return (
-    <UniformComposition
-      {...props}
-      resolveComponent={resolveComponent}
-      route={route}
-      // this is the setting for SSR and Edge-side rendering
-      // for the static mode (SSG) use mode="static"
-      mode="server"
-    />
+    <>
+      <UniformComposition
+        {...props}
+        resolveComponent={resolveComponent}
+        route={route}
+        // this is the setting for SSR and Edge-side rendering
+        // for the static mode (SSG) use mode="static"
+        mode="server"
+      />
+    </>
   );
 }
 

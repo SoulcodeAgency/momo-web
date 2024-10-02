@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle2 } from "lucide-react"
 
-export default function StickyHeaderProductLandingPage() {
+export default function ProductLandingPage() {
   return (
     <main className="flex-1 pt-16"> {/* Added pt-16 to account for fixed header */}
       <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black text-white">

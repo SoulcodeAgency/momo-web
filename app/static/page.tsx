@@ -1,5 +1,5 @@
 import Header from "@/components/common/Header";
-import ProductLandingPage from "./ProductLandingPage";
+import ProductLandingPage from "../../components/modules/ProductLandingPage";
 import Footer from "@/components/common/Footer";
 
 export default function Home() {
