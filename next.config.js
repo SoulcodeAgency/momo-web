@@ -4,7 +4,7 @@ const withVercelToolbar = require('@vercel/toolbar/plugins/next')();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["*"],
+    remotePatterns: [],
   },
   experimental: {
     ppr: "incremental",
