@@ -1,11 +1,9 @@
+import { UniformSlot, UniformText } from "@uniformdev/canvas-next-rsc/component";
+import { CanvasProps } from "@/lib/typeHelpers";
 import Card, { type CardProps } from "@/components/common/Card";
-import { ComponentProps, UniformSlot, UniformText } from "@uniformdev/canvas-next-rsc/component";
 
 type SlotNames = "content";
-type Props = ComponentProps<
-  Omit<CardProps, 'children'>,
-  SlotNames
->;
+type Props = CanvasProps<CardProps, SlotNames>;
 
 export function CanvasCard({ context, component, slots }: Props) {
   // Provide the uniform fields for inline editing, instead of passing strings directly
