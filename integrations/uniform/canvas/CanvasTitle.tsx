@@ -1,13 +1,12 @@
-import Title, { TitleProps } from "@/components/common/Title";
-import { ComponentProps, UniformText } from "@uniformdev/canvas-next-rsc/component";
+import Title from "@/components/common/Title";
+import { CanvasProps } from "@/lib/typeHelpers";
+import { UniformText } from "@uniformdev/canvas-next-rsc/component";
 
-type SlotNames = "";
-type UniformTitleProps = ComponentProps<
-  Omit<TitleProps, 'children'> & { title: string },
-  SlotNames
->;
+type Parameters = { title: string };
+type SlotNames = string;
+type Props = CanvasProps<Parameters, SlotNames>;
 
-export function CanvasTitle({ component, context }: UniformTitleProps) {
+export function CanvasTitle({ component, context }: Props) {
   return (
     <Title>
       <UniformText

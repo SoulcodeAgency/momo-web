@@ -1,13 +1,14 @@
-import { ComponentProps } from "@uniformdev/canvas-next-rsc/component";
+import { CanvasProps } from "@/lib/typeHelpers";
 import Footer from "@/components/common/Footer";
 
-type SlotNames = "";
-type PageProps = ComponentProps<
-  {},
-  SlotNames
->;
+type Parameters = {
+  title: string;
+  anchor: string;
+};
+type SlotNames = string;
+type Props = CanvasProps<Parameters, SlotNames>;
 
-export function CanvasFooter({ context, component, slots }: PageProps) {
+export function CanvasFooter({ context, component, slots }: Props) {
   return (
     <Footer />
   );

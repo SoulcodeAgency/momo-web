@@ -1,16 +1,12 @@
-import {
-  ComponentProps,
-  UniformSlot,
-} from "@uniformdev/canvas-next-rsc/component";
+import { UniformSlot } from "@uniformdev/canvas-next-rsc/component";
+import { CanvasProps } from "@/lib/typeHelpers";
 import Header from "@/components/common/Header";
 
+type Parameters = {};
 type SlotNames = "links";
-type PageProps = ComponentProps<
-  {},
-  SlotNames
->;
+type Props = CanvasProps<Parameters, SlotNames>;
 
-export function CanvasHeader({ context, component, slots }: PageProps) {
+export function CanvasHeader({ context, component, slots }: Props) {
   return (
     <Header>
       <UniformSlot

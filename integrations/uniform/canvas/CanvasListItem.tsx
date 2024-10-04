@@ -1,14 +1,12 @@
-import ListItem, { ListItemProps } from "@/components/common/ListItem";
-import { ComponentProps, UniformText } from "@uniformdev/canvas-next-rsc/component";
+import { CanvasProps } from "@/lib/typeHelpers";
+import ListItem from "@/components/common/ListItem";
+import { UniformText } from "@uniformdev/canvas-next-rsc/component";
 
-type SlotNames = "";
-// TODO: Make a type helper for the Omit children part or the whole Component Props and Slot stuff
-type CanvasListItemProps = ComponentProps<
-  Omit<ListItemProps, 'children'>,
-  SlotNames
->;
+type Parameters = {};
+type SlotNames = string;
+type Props = CanvasProps<Parameters, SlotNames>;
 
-export function CanvasListItem({ component, context }: CanvasListItemProps) {
+export function CanvasListItem({ component, context }: Props) {
   return (
     <ListItem>
       <UniformText

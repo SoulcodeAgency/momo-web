@@ -1,16 +1,12 @@
+import { CanvasProps } from "@/lib/typeHelpers";
+import { UniformSlot } from "@uniformdev/canvas-next-rsc/component";
 import List from "@/components/common/List";
-import {
-  ComponentProps,
-  UniformSlot,
-} from "@uniformdev/canvas-next-rsc/component";
 
+type Parameters = {};
 type SlotNames = "listItems";
-type CanvasListProps = ComponentProps<
-  {},
-  SlotNames
->;
+type Props = CanvasProps<Parameters, SlotNames>;
 
-export function CanvasList({ context, component, slots }: CanvasListProps) {
+export function CanvasList({ context, component, slots }: Props) {
   return (
     <List>
       <UniformSlot

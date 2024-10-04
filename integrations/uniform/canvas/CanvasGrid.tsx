@@ -1,13 +1,12 @@
+import { UniformSlot } from "@uniformdev/canvas-next-rsc/component";
+import { CanvasProps } from "@/lib/typeHelpers";
 import { cn } from "@/lib/utils";
-import { ComponentProps, UniformSlot } from "@uniformdev/canvas-next-rsc/component";
 
+type Parameters = { mdColumns: number };
 type SlotNames = "content";
-type UniformTitleProps = ComponentProps<
-  { mdColumns: number },
-  SlotNames
->;
+type Props = CanvasProps<Parameters, SlotNames>;
 
-export function CanvasGrid({ component, context, slots, mdColumns }: UniformTitleProps) {
+export function CanvasGrid({ component, context, slots, mdColumns }: Props) {
   const columnClasses = `md:grid-cols-${mdColumns ?? 3}`;
   return (
     <div className={cn("grid grid-cols-1 gap-8 w-full max-w-5xl", columnClasses)} >
