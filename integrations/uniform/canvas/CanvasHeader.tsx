@@ -10,7 +10,7 @@ type PageProps = ComponentProps<
   SlotNames
 >;
 
-export function UniformHeader({ context, component, slots }: PageProps) {
+export function CanvasHeader({ context, component, slots }: PageProps) {
   return (
     <Header>
       <UniformSlot

@@ -8,8 +8,7 @@ type UniformContainerProps = ComponentProps<
   SlotNames
 >;
 
-// TODO: Should we allow default export? Should we name all canvas components with "Canvas" prefix?
-export function UniformContainer(props: UniformContainerProps) {
+export function CanvasContainer(props: UniformContainerProps) {
   // Check and define the anchor element
   const anchorElement = props.anchor ? <CanvasAnchor {...props} title={props.title} anchor={props.anchor} /> : null;
 
@@ -27,4 +26,3 @@ export function UniformContainer(props: UniformContainerProps) {
     </>
   );
 }
-

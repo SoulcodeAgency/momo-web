@@ -7,7 +7,7 @@ type UniformTitleProps = ComponentProps<
   SlotNames
 >;
 
-export function UniformTitle({ component, context }: UniformTitleProps) {
+export function CanvasTitle({ component, context }: UniformTitleProps) {
   return (
     <Title>
       <UniformText

@@ -2,17 +2,17 @@ import {
   type ComponentProps,
   DefaultNotImplementedComponent,
 } from "@uniformdev/canvas-next-rsc/component";
-import { Page } from "./canvas/Page";
-import { Hero } from "./canvas/Hero";
-import { UniformHeader } from "./canvas/Header";
-import { UniformFooter } from "./canvas/Footer";
+import { CanvasPage } from "./canvas/CanvasPage";
+import { CanvasHero } from "./canvas/CanvasHero";
+import { CanvasHeader } from "./canvas/CanvasHeader";
+import { CanvasFooter } from "./canvas/CanvasFooter";
 import { CanvasAnchor } from "./canvas/CanvasAnchor";
-import { CanvasCard } from "./canvas/Card";
-import { UniformContainer } from "./canvas/Container";
-import { UniformTitle } from "./canvas/Title";
-import { UniformGrid } from "./canvas/Grid";
-import { CanvasFeatureList } from "./canvas/FeatureList";
-import { CanvasListItem } from "./canvas/ListItem";
+import { CanvasCard } from "./canvas/CanvasCard";
+import { CanvasContainer } from "./canvas/CanvasContainer";
+import { CanvasTitle } from "./canvas/CanvasTitle";
+import { CanvasGrid } from "./canvas/CanvasGrid";
+import { CanvasList } from "./canvas/CanvasList";
+import { CanvasListItem } from "./canvas/CanvasListItem";
 
 // TODO: Think about improving this resolver...
 
@@ -22,16 +22,16 @@ export function resolveComponent({ component }: { component: any }) {
 
   // Add component resolutions
   if (component.type === "page") {
-    componentType = Page;
+    componentType = CanvasPage;
   }
   if (component.type === "hero") {
-    componentType = Hero;
+    componentType = CanvasHero;
   }
   if (component.type === "header") {
-    componentType = UniformHeader;
+    componentType = CanvasHeader;
   }
   if (component.type === "footer") {
-    componentType = UniformFooter;
+    componentType = CanvasFooter;
   }
   if (component.type === "anchor") {
     componentType = CanvasAnchor;
@@ -40,16 +40,16 @@ export function resolveComponent({ component }: { component: any }) {
     componentType = CanvasCard;
   }
   if (component.type === "container") {
-    componentType = UniformContainer;
+    componentType = CanvasContainer;
   }
   if (component.type === "title") {
-    componentType = UniformTitle;
+    componentType = CanvasTitle;
   }
   if (component.type === "grid") {
-    componentType = UniformGrid;
+    componentType = CanvasGrid;
   }
-  if (component.type === "featureList") {
-    componentType = CanvasFeatureList;
+  if (component.type === "list") {
+    componentType = CanvasList;
   }
   if (component.type === "listItem") {
     componentType = CanvasListItem;

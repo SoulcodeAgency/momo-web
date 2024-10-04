@@ -1,10 +1,10 @@
 import React from "react";
 
-export type FeatureListProps = {
+export type ListProps = {
   children: React.ReactNode;
 }
 
-export default function FeatureList({ children }: FeatureListProps) {
+export default function List({ children }: ListProps) {
   return (
     <ul className="mt-4 space-y-2">
       {children}

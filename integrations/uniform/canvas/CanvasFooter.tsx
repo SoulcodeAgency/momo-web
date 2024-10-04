@@ -7,7 +7,7 @@ type PageProps = ComponentProps<
   SlotNames
 >;
 
-export function UniformFooter({ context, component, slots }: PageProps) {
+export function CanvasFooter({ context, component, slots }: PageProps) {
   return (
     <Footer />
   );

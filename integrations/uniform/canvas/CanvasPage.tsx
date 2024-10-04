@@ -11,7 +11,7 @@ type PageProps = ComponentProps<
   SlotNames
 >;
 
-export function Page({ context, component, slots, title }: PageProps) {
+export function CanvasPage({ context, component, slots, title }: PageProps) {
   return (
     <div className="font-sans">
       <div className="flex flex-col min-h-screen">

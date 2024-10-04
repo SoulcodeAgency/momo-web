@@ -9,7 +9,7 @@ type HeroProps = ComponentProps<{
 // TODO: This component was a quick example, it should be rather a common component, not a canvas only component.
 // It might be possible to reproduce this component with Container, Grid, Text and Button components.
 
-export function Hero({ context, component }: HeroProps) {
+export function CanvasHero({ context, component }: HeroProps) {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black text-white">
       <div className="container mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center">

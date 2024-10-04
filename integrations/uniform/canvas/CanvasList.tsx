@@ -1,24 +1,24 @@
-import FeatureList from "@/components/common/FeatureList";
+import List from "@/components/common/List";
 import {
   ComponentProps,
   UniformSlot,
 } from "@uniformdev/canvas-next-rsc/component";
 
 type SlotNames = "listItems";
-type CanvasFeatureListProps = ComponentProps<
+type CanvasListProps = ComponentProps<
   {},
   SlotNames
 >;
 
-export function CanvasFeatureList({ context, component, slots }: CanvasFeatureListProps) {
+export function CanvasList({ context, component, slots }: CanvasListProps) {
   return (
-    <FeatureList>
+    <List>
       <UniformSlot
         context={context}
         data={component}
         slot={slots.listItems}
       />
-    </FeatureList>
+    </List>
   );
 }
 
