@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { Suspense } from 'react';
+import { initializeComponentsMap } from '@/integrations/uniform/UniformComponentResolver';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,10 +15,15 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Momo",
   description: "Momo web landing page",
 };
+
+export async function generateMetadata() {
+  await initializeComponentsMap();
+  return metadata;
+}
 
 export default function RootLayout({
   children,
