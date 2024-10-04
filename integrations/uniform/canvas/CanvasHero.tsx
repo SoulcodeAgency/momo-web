@@ -33,7 +33,7 @@ export function CanvasHero({ context, component }: HeroProps) {
         </div>
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
           <Button variant="outline" className="bg-white text-black hover:bg-gray-200">Get Started for Free</Button>
-          <Button variant="outline">Learn More</Button>
+          <Button variant="secondary">Learn More</Button>
         </div>
       </div>
     </section>
