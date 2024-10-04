@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import { Card as UiCard, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
-interface CardProps {
-  title: string;
-  description?: string;
+type CardProps = {
+  title: string | ReactNode;
+  description?: string | ReactNode;
   children?: ReactNode;
 }
 

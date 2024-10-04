@@ -22,11 +22,13 @@ export function Page({ context, component, slots, title }: PageProps) {
           slot={slots.header}
         />
 
-        <UniformSlot
-          context={context}
-          data={component}
-          slot={slots.content}
-        />
+        <main>
+          <UniformSlot
+            context={context}
+            data={component}
+            slot={slots.content}
+          />
+        </main>
 
         <UniformSlot
           context={context}

@@ -1,5 +1,5 @@
-import CommonCard from "@/components/common/Card";
-import { ComponentProps, UniformSlot } from "@uniformdev/canvas-next-rsc/component";
+import Card from "@/components/common/Card";
+import { ComponentProps, UniformSlot, UniformText } from "@uniformdev/canvas-next-rsc/component";
 
 type SlotNames = "content";
 type CardProps = ComponentProps<
@@ -10,17 +10,18 @@ type CardProps = ComponentProps<
   SlotNames
 >;
 
-// TODO: Should we allow default export? Should we name all canvas components with "Canvas" prefix?
-// For now, we just named the default export of the common "card" component as "CommonCard".
-export function Card({ context, component, title, description, slots }: CardProps) {
+export function CanvasCard({ context, component, slots }: CardProps) {
+  // Provide the uniform fields for inline editing, instead of passing strings directly
+  const uniformTitle = <UniformText context={context} component={component} parameterId="title" placeholder="Enter title here" />;
+  const uniformDescription = <UniformText context={context} component={component} parameterId="description" placeholder="Enter description here" />;
   return (
-    <CommonCard title={title} description={description}>
+    <Card title={uniformTitle} description={uniformDescription}>
       <UniformSlot
         context={context}
         data={component}
         slot={slots.content}
       />
-    </CommonCard>
+    </Card>
   );
 }
 

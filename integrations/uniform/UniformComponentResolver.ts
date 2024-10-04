@@ -7,10 +7,12 @@ import { Hero } from "./canvas/Hero";
 import { UniformHeader } from "./canvas/Header";
 import { UniformFooter } from "./canvas/Footer";
 import { Anchor } from "./canvas/Anchor";
-import { Card } from "./canvas/Card";
+import { CanvasCard } from "./canvas/Card";
 import { UniformContainer } from "./canvas/Container";
 import { UniformTitle } from "./canvas/Title";
 import { UniformGrid } from "./canvas/Grid";
+import { CanvasFeatureList } from "./canvas/FeatureList";
+import { CanvasListItem } from "./canvas/ListItem";
 
 // TODO: Think about improving this resolver...
 
@@ -35,7 +37,7 @@ export function resolveComponent({ component }: { component: any }) {
     componentType = Anchor;
   }
   if (component.type === "card") {
-    componentType = Card;
+    componentType = CanvasCard;
   }
   if (component.type === "container") {
     componentType = UniformContainer;
@@ -45,6 +47,12 @@ export function resolveComponent({ component }: { component: any }) {
   }
   if (component.type === "grid") {
     componentType = UniformGrid;
+  }
+  if (component.type === "featureList") {
+    componentType = CanvasFeatureList;
+  }
+  if (component.type === "listItem") {
+    componentType = CanvasListItem;
   }
 
 
