@@ -5,6 +5,6 @@ type AnchorProps = ComponentProps<{
   anchor: string;
 }>;
 
-export function Anchor({ anchor }: AnchorProps) {
+export function CanvasAnchor({ anchor }: AnchorProps) {
   return (<div className="scroll-target" id={anchor} />);
 }

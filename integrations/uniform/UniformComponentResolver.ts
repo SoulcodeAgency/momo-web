@@ -6,7 +6,7 @@ import { Page } from "./canvas/Page";
 import { Hero } from "./canvas/Hero";
 import { UniformHeader } from "./canvas/Header";
 import { UniformFooter } from "./canvas/Footer";
-import { Anchor } from "./canvas/Anchor";
+import { CanvasAnchor } from "./canvas/CanvasAnchor";
 import { CanvasCard } from "./canvas/Card";
 import { UniformContainer } from "./canvas/Container";
 import { UniformTitle } from "./canvas/Title";
@@ -34,7 +34,7 @@ export function resolveComponent({ component }: { component: any }) {
     componentType = UniformFooter;
   }
   if (component.type === "anchor") {
-    componentType = Anchor;
+    componentType = CanvasAnchor;
   }
   if (component.type === "card") {
     componentType = CanvasCard;
