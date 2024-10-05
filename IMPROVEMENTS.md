@@ -44,4 +44,4 @@ See [text](lib/typeHelpers.ts).
 
 Ideas for the far future
 
-* shadcn install "template" for the base setup
+* shadcn install "template" (json) for the base setup

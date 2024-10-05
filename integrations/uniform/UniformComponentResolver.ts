@@ -29,7 +29,7 @@ export async function initializeComponentsMap() {
       componentsMap[getCompositionPublicId(componentName)] = await importComponent(componentName);
     }
   }
-  console.log("🤩 Resolved compositions to React Components:", componentsMap)
+  // console.log("🤩 Resolved compositions to React Components:", componentsMap)
 }
 
 // Function to dynamically import components
@@ -37,7 +37,7 @@ async function importComponent(componentName: string) {
   try {
     const module = require(`${UNIFORM_COMPONENTS_DIR_RELATIVE}/${componentName}`);
     if (module[componentName]) {
-      console.log("✔️ Imported component:", componentName);
+      // console.log("✔️ Imported component:", componentName);
       return module[componentName];
     }
 
