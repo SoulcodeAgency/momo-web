@@ -20,15 +20,14 @@ Ideas and topics in progress, or to sync and share about:
 
 * Should we name all *canvas* components with "Canvas" prefix? Which could help identifying them and handling imports like "Card" component.
   * ⌛Trial in progress...
-  * Issue was related to: (Canvas `Card` component which uses our `Card` component/module, which uses shadcn's `Card` component)
+  * 🧙 Issue was related to: (Canvas `Card` component which uses our `Card` component/module, which uses shadcn's `Card` component)
 
 * **UniformComponentResolver**  
   Can we improve / automate this somehow?!:
   * ✅ Remove need of defining mappers (maybe keep optional)
   * ✅ Remove the need of having an index file and a component file
   * ✅ Remove the need of defining the components in the component resolver.
-  * ❌ HMR seems to be broken with this now. Means developer needs to refresh the uniform page manually. 😥
-  * Share / contribute idea / code with Uniform?
+  * 🤩 Share / contribute idea / code with Uniform?
     * Uniform examples sometimes do have HOC components (like `withoutContainer`) and therefore also changes in the mapper.
       * My suggestion would be, to rather solved this issue with introducing just a separate "component"-file doing the HOC
       * or keeping it possible to still export mappings.
