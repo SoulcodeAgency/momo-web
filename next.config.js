@@ -6,9 +6,9 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
-  experimental: {
-    ppr: "incremental",
-  },
+  // experimental: {
+    // ppr: "incremental",
+  // },
 };
 
 module.exports = withVercelToolbar(withUniformConfig(nextConfig));
