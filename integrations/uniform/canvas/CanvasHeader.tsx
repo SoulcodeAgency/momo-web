@@ -1,5 +1,5 @@
 import { UniformSlot } from "@uniformdev/canvas-next-rsc/component";
-import { CanvasProps } from "@/lib/typeHelpers";
+import { CanvasProps } from "../uniformTypes";
 import Header from "@/components/common/Header";
 
 type Parameters = {};

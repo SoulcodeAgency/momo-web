@@ -1,4 +1,4 @@
-import { CanvasProps } from "@/lib/typeHelpers";
+import { CanvasProps } from "../uniformTypes";
 import { UniformSlot } from "@uniformdev/canvas-next-rsc/component";
 import List from "@/components/common/List";
 

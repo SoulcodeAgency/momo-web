@@ -1,7 +1,7 @@
 import Container, { ContainerProps } from "@/components/common/Container";
 import { UniformSlot } from "@uniformdev/canvas-next-rsc/component";
 import { CanvasAnchor } from "./CanvasAnchor";
-import { CanvasProps } from "@/lib/typeHelpers";
+import { CanvasProps } from "../uniformTypes";
 
 type Parameters = {
   title: string;

@@ -1,4 +1,4 @@
-import { CanvasProps } from "@/lib/typeHelpers";
+import { CanvasProps } from "../uniformTypes";
 import { UniformText } from "@uniformdev/canvas-next-rsc/component";
 import Text from "@/components/common/Text";
 

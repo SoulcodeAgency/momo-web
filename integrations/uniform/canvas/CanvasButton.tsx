@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CanvasProps } from "@/lib/typeHelpers";
+import { CanvasProps } from "../uniformTypes";
 import { UniformText } from "@uniformdev/canvas-next-rsc/component";
 
 type Parameters = {

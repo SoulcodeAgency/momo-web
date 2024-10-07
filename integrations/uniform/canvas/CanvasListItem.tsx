@@ -1,4 +1,4 @@
-import { CanvasProps } from "@/lib/typeHelpers";
+import { CanvasProps } from "../uniformTypes";
 import ListItem from "@/components/common/ListItem";
 import { UniformText } from "@uniformdev/canvas-next-rsc/component";
 

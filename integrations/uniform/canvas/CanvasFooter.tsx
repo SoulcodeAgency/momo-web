@@ -1,4 +1,4 @@
-import { CanvasProps } from "@/lib/typeHelpers";
+import { CanvasProps } from "../uniformTypes";
 import Footer from "@/components/common/Footer";
 
 type Parameters = {

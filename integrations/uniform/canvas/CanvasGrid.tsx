@@ -1,5 +1,5 @@
 import { UniformSlot } from "@uniformdev/canvas-next-rsc/component";
-import { CanvasProps } from "@/lib/typeHelpers";
+import { CanvasProps } from "../uniformTypes";
 import { cn } from "@/lib/utils";
 
 type Parameters = { mdColumns: number };
