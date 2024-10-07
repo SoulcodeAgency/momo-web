@@ -6,7 +6,7 @@ export type ListProps = {
 
 export default function List({ children }: ListProps) {
   return (
-    <ul className="mt-4 space-y-2">
+    <ul className="mt-4 space-y-2 justify-start">
       {children}
     </ul>
   );
