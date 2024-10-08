@@ -7,7 +7,7 @@ type Props = CanvasProps<Parameters, SlotNames>;
 
 export function CanvasRichText({ component, context }: Props) {
   return (
-    <div className='text-left'>
+    <div className='text-left prose'>
       <UniformRichText context={context} component={component} parameterId="text" placeholder={'Enter text here'} />
     </div>
   );
