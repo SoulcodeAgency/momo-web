@@ -13,3 +13,10 @@ export type CanvasProps<TParameters, TSlots extends string = never, TProps = {}>
   Omit<TProps, 'children'> & TParameters,
   TSlots
 >;
+
+export type LinkType = {
+  path: string;
+  type?: string;
+  nodeId?: string;
+  projectMapId?: string;
+};
