@@ -6,20 +6,11 @@ This covers all refined architecture and helpers, regarding the project work for
 
 ## TODO
 
-Ideas and topics in progress, or to sync and share about:
+Ideas and topics in progress:
 
-* Should we do default export? Suggestion `NO` : Because it allows to use `any` Name when importing it, making it harder to identify or mess up the code base.
-  * ✅ If rename is required, it can still be done on named export, this way, the component name is still always reachable over a global search (`Card as SpecialFeature`)
-  * ❌ default import would allow any name - easier for typing wrong name and therefore possibly making it harder to maintain
-
-* Should we always use functions or const?
-  * `export function abc(){ ... }`
-  * ✅ functions can be default exported as well (`export default abc`)
-  * ✅ or even on the same line (⚠️this of course will remove the named export) (`export default function abc()`)
-  * ✅ less code to write, forces imports to use correct name always
-
+* Inline editing looks like doesn't support modifying the `entry`, which is linked over the resource or loaded over a `loop`-ing resource.
 * Should we name all *canvas* components with "Canvas" prefix? Which could help identifying them and handling imports like "Card" component.
-  * ⌛Trial in progress...
+  * ⌛Trial in progress... Looks like fine
   * 🧙 Issue was related to: (Canvas `Card` component which uses our `Card` component/module, which uses shadcn's `Card` component)
 
 * **UniformComponentResolver**  
@@ -33,6 +24,23 @@ Ideas and topics in progress, or to sync and share about:
       * or keeping it possible to still export mappings.
 
 ## DONE
+
+### Use function definition
+
+Should we always use functions or const?
+
+* `export function abc(){ ... }`
+* ✅ functions can be default exported as well (`export default abc`)
+* ✅ or even on the same line (⚠️this of course will remove the named export) (`export default function abc()`)
+* ✅ less code to write, forces imports to use correct name always
+
+### Canvas components - use NAMED exports
+
+Should we do default exports?
+Suggestion `NO` : Because it allows to use `any` Name when importing it, making it harder to identify or mess up the code base.
+
+* ✅ If component rename is required, it can still be done on named export, this way, the component name is still always reachable over a global search (`Card as SpecialFeature`)
+* ❌ default import would allow any name - easier for typing wrong name and therefore possibly making it harder to maintain
 
 ### CanvasProps
 
