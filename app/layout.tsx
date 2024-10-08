@@ -1,20 +1,29 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import { UniformContext } from '@uniformdev/canvas-next-rsc';
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import './globals.css';
+import { VercelToolbar } from '@vercel/toolbar/next';
+import { Suspense } from 'react';
+import { initializeComponentsMap } from '@/integrations/uniform/UniformComponentResolver';
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
 });
 
-export const metadata: Metadata = {
-  title: "Momo",
-  description: "Momo web landing page",
+const metadata: Metadata = {
+  title: 'Momo',
+  description: 'Momo web landing page',
 };
+
+export async function generateMetadata() {
+  await initializeComponentsMap();
+  return metadata;
+}
 
 export default function RootLayout({
   children,
@@ -24,7 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <UniformContext>{children}</UniformContext>
+
+        <Suspense fallback={<p>Loading Vercel Toolbar ...</p>}>
+          <VercelToolbar />
+        </Suspense>
       </body>
     </html>
   );

@@ -6,8 +6,14 @@ body {
   font-synthesis: none;
 }
 
+/* TODO: Investigate why layer rules did not work out as expected */
 @layer base {
   :root {
     --radius: 0.5rem;
   }
+}
+
+/* Make sure the scroll target are not behind the fixed header */
+.scroll-target {
+  scroll-margin-top: 65px;
 }
