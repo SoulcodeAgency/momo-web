@@ -23,7 +23,14 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		}
   	}
-  },
-  plugins: [require("tailwindcss-animate")],
+	},
+	safelist: [
+		{
+			pattern: /grid-cols-*/,
+			variants: ["md"],
+    }
+	],
+	plugins: [require("tailwindcss-animate")],
+	
 };
 export default config;
