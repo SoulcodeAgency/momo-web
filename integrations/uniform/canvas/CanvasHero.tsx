@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { ComponentProps, UniformText } from "@uniformdev/canvas-next-rsc/component";
+import { Button } from '@/components/ui/button';
+import { ComponentProps, UniformText } from '@uniformdev/canvas-next-rsc/component';
 
 type HeroProps = ComponentProps<{
   title: string;
@@ -20,7 +20,7 @@ export function CanvasHero({ context, component }: HeroProps) {
             parameterId="title"
             as="h1"
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
-            placeholder={"Revolutionize Your Workflow"}
+            placeholder={'Revolutionize Your Workflow'}
           />
           <UniformText
             context={context}
@@ -28,18 +28,18 @@ export function CanvasHero({ context, component }: HeroProps) {
             parameterId="description"
             as="p"
             className="mx-auto max-w-[700px] text-gray-300 md:text-xl"
-            placeholder={"Streamline your tasks, boost productivity, and achieve more with our cutting-edge project management tool."}
+            placeholder={
+              'Streamline your tasks, boost productivity, and achieve more with our cutting-edge project management tool.'
+            }
           />
         </div>
         <div className="flex flex-col sm:flex-row gap-4 mt-8">
-          <Button variant="outline" className="bg-white text-black hover:bg-gray-200">Get Started for Free</Button>
+          <Button variant="outline" className="bg-white text-black hover:bg-gray-200">
+            Get Started for Free
+          </Button>
           <Button variant="secondary">Learn More</Button>
         </div>
       </div>
     </section>
-
-
-
   );
 }
-

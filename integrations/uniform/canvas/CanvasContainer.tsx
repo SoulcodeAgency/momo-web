@@ -1,13 +1,13 @@
-import Container, { ContainerProps } from "@/components/common/Container";
-import { UniformSlot } from "@uniformdev/canvas-next-rsc/component";
-import { CanvasAnchor } from "./CanvasAnchor";
-import { CanvasProps } from "../uniformTypes";
+import Container, { ContainerProps } from '@/components/common/Container';
+import { UniformSlot } from '@uniformdev/canvas-next-rsc/component';
+import { CanvasAnchor } from './CanvasAnchor';
+import { CanvasProps } from '../uniformTypes';
 
 type Parameters = {
   title: string;
   anchor: string;
 };
-type SlotNames = "content";
+type SlotNames = 'content';
 type Props = CanvasProps<Parameters, SlotNames, ContainerProps>;
 
 export function CanvasContainer(props: Props) {
@@ -18,12 +18,8 @@ export function CanvasContainer(props: Props) {
   return (
     <>
       {anchorElement}
-      <Container containerVariant={containerVariant} className={className} >
-        <UniformSlot
-          context={context}
-          data={component}
-          slot={slots.content}
-        />
+      <Container containerVariant={containerVariant} className={className}>
+        <UniformSlot context={context} data={component} slot={slots.content} />
       </Container>
     </>
   );

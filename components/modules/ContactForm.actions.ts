@@ -3,14 +3,14 @@
 import { sendRequest } from '@/server/actions';
 import { DefaultFormFeedback } from '@/lib/formTypes';
 
-const testWebhook = "/webhook-test/175cd025-7232-4bae-afbe-6a20b252a959";
-const prodWebhook = "/webhook/175cd025-7232-4bae-afbe-6a20b252a959";
+const testWebhook = '/webhook-test/175cd025-7232-4bae-afbe-6a20b252a959';
+const prodWebhook = '/webhook/175cd025-7232-4bae-afbe-6a20b252a959';
 
 type Result = {};
 
 export async function contactFormAction(
   prevState: DefaultFormFeedback,
-  formData: FormData,
+  formData: FormData
 ): Promise<DefaultFormFeedback> {
   try {
     await sendRequest<Result>({

@@ -1,5 +1,5 @@
-import { CanvasProps } from "../uniformTypes";
-import Footer from "@/components/common/Footer";
+import { CanvasProps } from '../uniformTypes';
+import Footer from '@/components/common/Footer';
 
 type Parameters = {
   title: string;
@@ -9,8 +9,5 @@ type SlotNames = string;
 type Props = CanvasProps<Parameters, SlotNames>;
 
 export function CanvasFooter({ context, component, slots }: Props) {
-  return (
-    <Footer />
-  );
+  return <Footer />;
 }
-

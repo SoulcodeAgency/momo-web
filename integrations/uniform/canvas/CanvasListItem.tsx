@@ -1,6 +1,6 @@
-import { CanvasProps } from "../uniformTypes";
-import ListItem from "@/components/common/ListItem";
-import { UniformText } from "@uniformdev/canvas-next-rsc/component";
+import { CanvasProps } from '../uniformTypes';
+import ListItem from '@/components/common/ListItem';
+import { UniformText } from '@uniformdev/canvas-next-rsc/component';
 
 type Parameters = {};
 type SlotNames = string;
@@ -13,9 +13,8 @@ export function CanvasListItem({ component, context }: Props) {
         context={context}
         component={component}
         parameterId="text"
-        placeholder={"Enter your list item text here"}
+        placeholder={'Enter your list item text here'}
       />
     </ListItem>
   );
 }
-

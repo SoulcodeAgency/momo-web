@@ -1,9 +1,5 @@
-import { resolveComponent } from "@/integrations/uniform/UniformComponentResolver";
-import {
-  PageParameters,
-  retrieveRoute,
-  UniformComposition,
-} from "@uniformdev/canvas-next-rsc";
+import { resolveComponent } from '@/integrations/uniform/UniformComponentResolver';
+import { PageParameters, retrieveRoute, UniformComposition } from '@uniformdev/canvas-next-rsc';
 
 // Uncomment to statically render routes at build time
 // export { generateStaticParams } from '@uniformdev/canvas-next-rsc';
@@ -23,4 +19,3 @@ export default async function Home(props: PageParameters) {
     </>
   );
 }
-

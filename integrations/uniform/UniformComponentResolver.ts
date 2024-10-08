@@ -1,5 +1,5 @@
-import { DefaultNotImplementedComponent } from "@uniformdev/canvas-next-rsc/component"; // Default Fallback component for missing components
-import { NotImplementedComponent } from "./NotImplementedComponent"; // Custom Fallback component for missing components
+import { DefaultNotImplementedComponent } from '@uniformdev/canvas-next-rsc/component'; // Default Fallback component for missing components
+import { NotImplementedComponent } from './NotImplementedComponent'; // Custom Fallback component for missing components
 import { ComponentInstance } from '@uniformdev/canvas';
 import path from 'path';
 import fs from 'fs';
@@ -7,11 +7,11 @@ import fs from 'fs';
 /**
  * Configuration
  */
-const UNIFORM_COMPOSITION_NAME_CAMEL_CASE = true;              // Define if the first character of the uniform composition name is lowercase. True = "listItem", False = "ListItem"
-const UNIFORM_COMPONENT_FILE_NAME_PREFIX = "Canvas";           // Define a regex to replace the uniform component name. The prefix is used in the component file name and export, but not within Uniform. E.g. "CanvasListItem" -> "ListItem"
-const UNIFORM_COMPONENTS_DIR = 'integrations/uniform/canvas';  // From project root (process.cwd())
+const UNIFORM_COMPOSITION_NAME_CAMEL_CASE = true; // Define if the first character of the uniform composition name is lowercase. True = "listItem", False = "ListItem"
+const UNIFORM_COMPONENT_FILE_NAME_PREFIX = 'Canvas'; // Define a regex to replace the uniform component name. The prefix is used in the component file name and export, but not within Uniform. E.g. "CanvasListItem" -> "ListItem"
+const UNIFORM_COMPONENTS_DIR = 'integrations/uniform/canvas'; // From project root (process.cwd())
 const UNIFORM_COMPONENTS_DIR_ABSOLUTE_PATH = path.join(process.cwd(), UNIFORM_COMPONENTS_DIR);
-const UNIFORM_COMPONENTS_DIR_RELATIVE = './canvas';            // Configure the path from this file to the components directory
+const UNIFORM_COMPONENTS_DIR_RELATIVE = './canvas'; // Configure the path from this file to the components directory
 
 /**
  * Resolver code
@@ -45,9 +45,11 @@ async function importComponent(componentName: string) {
       console.warn(`⚠️ Missing correct named export for component "${componentName}". Fallback to default export`);
       return module.default;
     }
-    
+
     if (module) {
-      throw new Error(`❌ Neither named nor default export found for component "${componentName}". This component will not work!`);
+      throw new Error(
+        `❌ Neither named nor default export found for component "${componentName}". This component will not work!`
+      );
     }
 
     throw new Error(`❌ Component "${componentName}" not found!`);
@@ -66,7 +68,7 @@ async function importComponent(componentName: string) {
  */
 export function getCompositionPublicId(componentName: string): string {
   if (UNIFORM_COMPONENT_FILE_NAME_PREFIX) {
-    componentName = componentName.replace(new RegExp(`^${UNIFORM_COMPONENT_FILE_NAME_PREFIX}`, 'i'), '')
+    componentName = componentName.replace(new RegExp(`^${UNIFORM_COMPONENT_FILE_NAME_PREFIX}`, 'i'), '');
   }
   if (UNIFORM_COMPOSITION_NAME_CAMEL_CASE) {
     componentName = componentName.charAt(0).toLowerCase() + componentName.slice(1);

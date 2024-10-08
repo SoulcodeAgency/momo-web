@@ -1,4 +1,4 @@
-const { withUniformConfig } = require("@uniformdev/canvas-next-rsc/config");
+const { withUniformConfig } = require('@uniformdev/canvas-next-rsc/config');
 const withVercelToolbar = require('@vercel/toolbar/plugins/next')();
 
 /** @type {import('next').NextConfig} */
@@ -7,7 +7,7 @@ const nextConfig = {
     remotePatterns: [],
   },
   // experimental: {
-    // ppr: "incremental",
+  // ppr: "incremental",
   // },
 };
 

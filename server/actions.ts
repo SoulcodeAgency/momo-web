@@ -22,9 +22,7 @@ export async function sendRequest<T>({
 
   // Change the headers based on the return type
   const headers =
-    returnType === 'json'
-      ? new Headers({ accept: 'application/json' })
-      : new Headers({ accept: 'text/plain' });
+    returnType === 'json' ? new Headers({ accept: 'application/json' }) : new Headers({ accept: 'text/plain' });
 
   try {
     const res = await fetch(`${hostAddress}${endpointPath}`, {

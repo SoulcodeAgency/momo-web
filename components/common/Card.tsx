@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
-import { Card as UiCard, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Card as UiCard, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 
 export type CardProps = {
   title: string | ReactNode;
   description?: string | ReactNode;
   children?: ReactNode;
-}
+};
 
 export default function Card({ title, description, children }: CardProps) {
   return (
@@ -14,10 +14,7 @@ export default function Card({ title, description, children }: CardProps) {
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        {children}
-      </CardContent>
+      <CardContent>{children}</CardContent>
     </UiCard>
-  )
+  );
 }
-

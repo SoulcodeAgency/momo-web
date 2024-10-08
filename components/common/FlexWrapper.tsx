@@ -8,11 +8,7 @@ export type FlexWrapperProps = {
 
 export default function FlexWrapper({ children, className }: FlexWrapperProps) {
   // Default container styles
-  className = cn(className, "w-full flex justify-center gap-12");
+  className = cn(className, 'w-full flex justify-center gap-12');
 
-  return (
-    <div className={cn(className)}>
-      {children}
-    </div>
-  )
-};
+  return <div className={cn(className)}>{children}</div>;
+}
