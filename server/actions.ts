@@ -25,12 +25,15 @@ export async function sendRequest<T>({
     returnType === 'json' ? new Headers({ accept: 'application/json' }) : new Headers({ accept: 'text/plain' });
 
   try {
-    const res = await fetch(`${hostAddress}${endpointPath}`, {
-      body: formData,
+    const requestInit: RequestInit = {
       method,
       headers,
       next: { revalidate },
-    });
+    };
+    if (formData) {
+      requestInit.body = formData;
+    }
+    const res = await fetch(`${hostAddress}${endpointPath}`, requestInit);
 
     if (!res.ok) {
       throw new Error('Failed to fetch data');
