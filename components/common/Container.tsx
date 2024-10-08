@@ -9,7 +9,7 @@ export type ContainerProps = {
 
 export default function Container({ children, className, containerVariant }: ContainerProps) {
   // Default container styles
-  className = cn(className, 'w-full py-12 md:py-24 lg:py-32 text-center');
+  className = cn(className, 'group/container w-full py-12 md:py-24 lg:py-32 text-center');
 
   // Container variant styles
   switch (containerVariant) {
