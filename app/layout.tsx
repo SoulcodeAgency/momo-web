@@ -5,6 +5,12 @@ import './globals.css';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { Suspense } from 'react';
 import { initializeComponentsMap } from '@/integrations/uniform/UniformComponentResolver';
+import { PHProvider } from '../integrations/posthog/providers'
+import dynamic from 'next/dynamic'
+
+const PostHogPageView = dynamic(() => import('../integrations/posthog/PostHogPageView'), {
+  ssr: false,
+})
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -32,13 +38,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <UniformContext>{children}</UniformContext>
+      <PHProvider>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <PostHogPageView />
+          <UniformContext>{children}</UniformContext>
 
-        <Suspense fallback={<p>Loading Vercel Toolbar ...</p>}>
-          <VercelToolbar />
-        </Suspense>
-      </body>
+          <Suspense fallback={<p>Loading Vercel Toolbar ...</p>}>
+            <VercelToolbar />
+          </Suspense>
+        </body>
+      </PHProvider>
     </html>
   );
 }
