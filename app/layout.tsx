@@ -5,10 +5,10 @@ import './globals.css';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { Suspense } from 'react';
 import { initializeComponentsMap } from '@/integrations/uniform/UniformComponentResolver';
-import { PHProvider } from '../integrations/posthog/providers'
+import { PHProvider } from '@/integrations/posthog/PostHogProvider';
 import dynamic from 'next/dynamic'
 
-const PostHogPageView = dynamic(() => import('../integrations/posthog/PostHogPageView'), {
+const PostHogPageView = dynamic(() => import('@/integrations/posthog/PostHogPageView'), {
   ssr: false,
 })
 
