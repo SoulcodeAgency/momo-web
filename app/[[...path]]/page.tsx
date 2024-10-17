@@ -2,6 +2,7 @@ import { resolveComponent } from '@/integrations/uniform/UniformComponentResolve
 import { PageParameters, retrieveRoute, UniformComposition } from '@uniformdev/canvas-next-rsc';
 import PostHogClient from "@/integrations/posthog/posthogClient.server";
 import Link from 'next/link';
+import { CookiePreferencesProvider } from '@/lib/cookie/CookiePreferencesProvider';
 
 // Uncomment to statically render routes at build time
 // export { generateStaticParams } from '@uniformdev/canvas-next-rsc';
@@ -16,19 +17,21 @@ export default async function Home(props: PageParameters) {
 
   return (
     <>
-      <UniformComposition
-        {...props}
-        resolveComponent={resolveComponent}
-        route={route}
-        // this is the setting for SSR and Edge-side rendering
-        // for the static mode (SSG) use mode="static"
-        mode="server"
-      />
+      <CookiePreferencesProvider>
+        <UniformComposition
+          {...props}
+          resolveComponent={resolveComponent}
+          route={route}
+          // this is the setting for SSR and Edge-side rendering
+          // for the static mode (SSG) use mode="static"
+          mode="server"
+        />
 
-      {/* Posthog server side Flag example */}
-      {flags['main-cta'] &&
-        <Link href="http://posthog.com/">Go to PostHog</Link>
-      }
+        {/* Posthog server side Flag example */}
+        {flags['main-cta'] &&
+          <Link href="http://posthog.com/">Go to PostHog</Link>
+        }
+      </CookiePreferencesProvider>
     </>
   );
 }
