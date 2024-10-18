@@ -2,7 +2,7 @@ import { resolveComponent } from '@/integrations/uniform/UniformComponentResolve
 import { PageParameters, retrieveRoute, UniformComposition } from '@uniformdev/canvas-next-rsc';
 import PostHogClient from "@/integrations/posthog/posthogClient.server";
 import Link from 'next/link';
-import { CookiePreferencesProvider } from '@/lib/cookie/CookiePreferencesProvider';
+import { CookiePreferencesProvider } from '@/integrations/cookie/CookiePreferencesProvider';
 
 // Uncomment to statically render routes at build time
 // export { generateStaticParams } from '@uniformdev/canvas-next-rsc';
