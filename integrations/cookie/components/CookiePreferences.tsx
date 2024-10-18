@@ -11,7 +11,6 @@ const initialFormState: { analytics: "all" | "necessary" | null } = { analytics:
 
 function cookieFormAction(currentState: typeof initialFormState, formData: FormData): typeof initialFormState {
     const analytics = formData.get("analytics");
-    console.log("analytics", analytics);
     return { ...currentState, analytics: analytics ? "all" : "necessary" };
 }
 
@@ -127,8 +126,8 @@ const CookiePreferences = () => {
                                             <div className="flex items-center gap-2">
                                                 <Checkbox name="analytics" id="analytics" checked={checkboxConsentValue} onCheckedChange={(checked: boolean) => setCheckboxConsentValue(checked)} />
                                                 <label
-                                                    htmlFor="terms"
-                                                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                                    htmlFor="analytics"
+                                                    className="text-sm font-medium leading-none cursor-pointer peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                                 >
                                                     Allow
                                                 </label>

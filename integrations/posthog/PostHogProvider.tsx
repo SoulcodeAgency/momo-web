@@ -16,7 +16,8 @@ export function PHProvider({
       ui_host: POSTHOG_UI_HOST,
       person_profiles: 'identified_only',
       capture_pageview: false, // Disable automatic pageview capture, as we capture manually
-      capture_pageleave: true // Enable pageleave capture
+      capture_pageleave: true, // Enable pageleave capture
+      persistence: 'memory', // Default to memory, will be updated based on user consent
     })
   }, []);
 

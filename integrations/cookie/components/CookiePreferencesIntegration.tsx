@@ -6,6 +6,7 @@ import CookieBanner from "./CookieBanner";
 import CookiePreferences from "./CookiePreferences";
 import { getConsentSettingFromLocalStorage } from "../consent";
 import ShowCookiePreferences from "./ShowCookiePreferences";
+import { usePostHog } from "posthog-js/react";
 
 export default function CookiePreferencesIntegration() {
   const {
@@ -13,14 +14,16 @@ export default function CookiePreferencesIntegration() {
     setIsConsentLoaded,
     isConsentLoaded,
     consent,
-    isCookiePreferencesVisible,
     setIsCookiePreferencesVisible,
     handleConsentChange,
   } = useCookiePreferences();
 
+  const posthog = usePostHog();
   useEffect(() => {
-    console.log("CookiePreferencesIntegration re-rendered with values:", { isConsentLoaded, isCookiePreferencesVisible });
-  }, [isConsentLoaded, isCookiePreferencesVisible]);
+    if (consent !== null) {
+      posthog.set_config({ persistence: consent === 'all' ? 'localStorage+cookie' : 'memory' });
+    }
+  }, [consent]);
 
   useEffect(() => {
     // Get consent preference from local storage
