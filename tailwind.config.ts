@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: 'rgb(50 187 165)',
+        primary: 'rgb(13 47 59)',
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
@@ -28,6 +28,9 @@ const config: Config = {
             '--tw-prose-headings': 'inherit',
           },
         },
+      },
+      boxShadow: {
+        'custom-teal': '0px 0px 20px 7px rgb(13 47 59)',
       },
     },
   },
