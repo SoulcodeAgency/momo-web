@@ -1,3 +1,4 @@
+import ShowCookiePreferences from '@/integrations/cookie/components/ShowCookiePreferences';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -13,6 +14,9 @@ export default function Footer() {
           <Link className="text-xs hover:underline underline-offset-4" href="#">
             Privacy
           </Link>
+
+          {/* TODO: Doesn't work correctly, maybe because we are in uniform context somehow... */}
+          {/* <ShowCookiePreferences /> */}
         </nav>
       </div>
     </footer>

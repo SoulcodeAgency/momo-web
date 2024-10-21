@@ -14,11 +14,11 @@ export function CanvasContainer(props: Props) {
   // Check and define the anchor element
   const anchorElement = props.anchor ? <CanvasAnchor {...props} title={props.title} anchor={props.anchor} /> : null;
 
-  const { context, component, slots, containerVariant, className } = props;
+  const { context, component, slots, containerVariant, className, fullHeight } = props;
   return (
     <>
       {anchorElement}
-      <Container containerVariant={containerVariant} className={className}>
+      <Container containerVariant={containerVariant} className={className} fullHeight={fullHeight}>
         <UniformSlot context={context} data={component} slot={slots.content} />
       </Container>
     </>
