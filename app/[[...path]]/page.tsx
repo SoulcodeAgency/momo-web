@@ -1,15 +1,19 @@
 import { resolveComponent } from '@/integrations/uniform/UniformComponentResolver';
-import { PageParameters, retrieveRoute, UniformComposition } from '@uniformdev/canvas-next-rsc';
-import PostHogClient from "@/integrations/posthog/posthogClient.server";
+import { retrieveRoute, UniformComposition } from '@uniformdev/canvas-next-rsc';
+import PostHogClient from '@/integrations/posthog/posthogClient.server';
 import Link from 'next/link';
 import { CookiePreferencesProvider } from '@/integrations/cookie/CookiePreferencesProvider';
+import { AsyncPageParameters } from './types';
+import { extractProps } from '@/lib/typeHelpers';
 
 // Uncomment to statically render routes at build time
 // export { generateStaticParams } from '@uniformdev/canvas-next-rsc';
 
-export default async function Home(props: PageParameters) {
+export default async function Home(asyncProps: AsyncPageParameters) {
+  const props = await extractProps(asyncProps);
+
   const route = await retrieveRoute(props);
-  const posthog = PostHogClient()
+  const posthog = PostHogClient();
   const flags = await posthog.getAllFlags(
     'user_distinct_id' // replace with a user's distinct ID
   );
@@ -28,9 +32,7 @@ export default async function Home(props: PageParameters) {
         />
 
         {/* Posthog server side Flag example */}
-        {flags['main-cta'] &&
-          <Link href="http://posthog.com/">Go to PostHog</Link>
-        }
+        {flags['main-cta'] && <Link href="http://posthog.com/">Go to PostHog</Link>}
       </CookiePreferencesProvider>
     </>
   );
