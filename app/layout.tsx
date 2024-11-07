@@ -39,7 +39,9 @@ export default function RootLayout({
       <PHProvider>
         <CookiePreferencesProvider>
           <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
-            <PostHogPageView />
+            <Suspense>
+              <PostHogPageView />
+            </Suspense>
 
             <UniformContext>{children}</UniformContext>
 
