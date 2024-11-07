@@ -3,14 +3,16 @@ import { retrieveRoute, UniformComposition } from '@uniformdev/canvas-next-rsc';
 import PostHogClient from '@/integrations/posthog/posthogClient.server';
 import Link from 'next/link';
 import { CookiePreferencesProvider } from '@/integrations/cookie/CookiePreferencesProvider';
-import { AsyncPageParameters } from './types';
-import { extractProps } from '@/lib/typeHelpers';
+import { type PageParameters  } from '@uniformdev/canvas-next-rsc';
+import { type AsyncProps, extractProps } from '@/lib/typeHelpers';
 
 // Uncomment to statically render routes at build time
 // export { generateStaticParams } from '@uniformdev/canvas-next-rsc';
 
-export default async function Home(asyncProps: AsyncPageParameters) {
-  const props = await extractProps(asyncProps);
+export default async function Home(asyncProps: AsyncProps<PageParameters>) {
+  const props = await extractProps<PageParameters>(asyncProps);
+  // console.log("asyncProps", asyncProps)
+  console.log("extractProps", props)
 
   const route = await retrieveRoute(props);
   const posthog = PostHogClient();

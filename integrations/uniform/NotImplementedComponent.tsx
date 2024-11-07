@@ -1,5 +1,6 @@
 import { ComponentInstance } from '@uniformdev/canvas';
 import { getComponentName } from './UniformComponentResolver';
+import { JSX } from 'react';
 
 export function NotImplementedComponent({ component }: { component: ComponentInstance }): JSX.Element {
   const componentName = getComponentName(component.type);
