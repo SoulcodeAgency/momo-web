@@ -38,7 +38,6 @@ Should we always use functions or const?
 ### Canvas components - use NAMED exports
 
 Should we do default exports?
-Suggestion `NO` : Because it allows to use `any` Name when importing it, making it harder to identify or mess up the code base.
 
 - ✅ If component rename is required, it can still be done on named export, this way, the component name is still always reachable over a global search (`Card as SpecialFeature`)
 - ❌ default import would allow any name - easier for typing wrong name and therefore possibly making it harder to maintain
@@ -48,8 +47,14 @@ Suggestion `NO` : Because it allows to use `any` Name when importing it, making 
 A Generic, which helps to define the Component props for Canvas components.
 See [text](lib/typeHelpers.ts).
 
+### Async props helper
+
+- ✅ `lib\typeHelpers.ts` holds some generic type helper and props function for simpler handling of async props on async server components. Simpler resolving and type handling options.
+
 ## Future
 
 Ideas for the far future
 
 - shadcn install "template" (json) for the base setup
+- Introduce the starter kit components
+- Check Theming
