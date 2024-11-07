@@ -6,9 +6,18 @@ export type AsyncProps<T> = {
 
 export const extractProps = async <T>(asyncProps: AsyncProps<T>): Promise<T> => {
   const entries = Object.entries(asyncProps);
-  const resolvedEntries = await Promise.all(entries.map(async ([key, value]) => [key, await value]));
+  const settledEntries = await Promise.allSettled(entries.map(async ([key, value]) => {
+    try {
+      return [key, await value];
+    } catch (error) {
+      console.error(`Failed to resolve prop "${key}"`, error);
+      return [key, undefined]; // or handle the error as needed
+    }
+  }));
 
-  console.log("resolvedEntries", resolvedEntries);
+  const resolvedEntries = settledEntries
+    .filter(result => result.status === 'fulfilled')
+    .map(result => (result as PromiseFulfilledResult<[string, any]>).value);
 
   return Object.fromEntries(resolvedEntries) as T;
 };
