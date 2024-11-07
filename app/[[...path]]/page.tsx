@@ -10,11 +10,11 @@ import { type AsyncProps, extractProps } from '@/lib/typeHelpers';
 // export { generateStaticParams } from '@uniformdev/canvas-next-rsc';
 
 export default async function Home(asyncProps: AsyncProps<PageParameters>) {
-  const props = await extractProps<PageParameters>(asyncProps);
-  // console.log("asyncProps", asyncProps)
-  console.log("extractProps", props)
+  const props = await extractProps(asyncProps);
 
   const route = await retrieveRoute(props);
+
+  // TODO: Posthog flags integration is just an example for now:
   const posthog = PostHogClient();
   const flags = await posthog.getAllFlags(
     'user_distinct_id' // replace with a user's distinct ID
