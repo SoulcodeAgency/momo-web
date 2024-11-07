@@ -1,4 +1,4 @@
-import { CanvasProps } from '../uniformTypes';
+import { CanvasProps } from '../typeHelpers';
 import { UniformRichText } from '@uniformdev/canvas-next-rsc/component';
 
 type Parameters = { text: string };

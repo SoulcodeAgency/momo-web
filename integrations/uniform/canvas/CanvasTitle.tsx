@@ -1,5 +1,5 @@
 import Title from '@/components/common/Title';
-import { CanvasProps } from '../uniformTypes';
+import { CanvasProps } from '../typeHelpers';
 import { UniformText } from '@uniformdev/canvas-next-rsc/component';
 
 type Parameters = { title: string };

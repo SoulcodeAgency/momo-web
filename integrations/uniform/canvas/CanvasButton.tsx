@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { CanvasProps, LinkType } from '../uniformTypes';
+import { CanvasProps, LinkType } from '../typeHelpers';
 import { UniformText } from '@uniformdev/canvas-next-rsc/component';
 import Link from 'next/link';
 

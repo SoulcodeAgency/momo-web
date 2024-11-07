@@ -4,7 +4,7 @@ import PostHogClient from '@/integrations/posthog/posthogClient.server';
 import Link from 'next/link';
 import { CookiePreferencesProvider } from '@/integrations/cookie/CookiePreferencesProvider';
 import { type PageParameters  } from '@uniformdev/canvas-next-rsc';
-import { type AsyncProps, extractProps } from '@/lib/typeHelpers';
+import { type AsyncProps, extractProps } from '@/integrations/nextjs/typeHelpers';
 
 // Uncomment to statically render routes at build time
 // export { generateStaticParams } from '@uniformdev/canvas-next-rsc';

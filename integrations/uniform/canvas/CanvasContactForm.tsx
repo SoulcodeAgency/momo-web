@@ -1,4 +1,4 @@
-import { CanvasProps } from '../uniformTypes';
+import { CanvasProps } from '../typeHelpers';
 import ContactForm from '@/components/modules/ContactForm';
 
 type Parameters = {};

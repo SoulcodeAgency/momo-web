@@ -1,4 +1,4 @@
-import { CanvasProps } from '../uniformTypes';
+import { CanvasProps } from '../typeHelpers';
 import Image, { type ImageProps } from '@/components/common/Image';
 import { getMediaUrl } from '../utilities';
 import type { Asset } from '@uniformdev/assets';

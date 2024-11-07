@@ -42,14 +42,19 @@ Should we do default exports?
 - ✅ If component rename is required, it can still be done on named export, this way, the component name is still always reachable over a global search (`Card as SpecialFeature`)
 - ❌ default import would allow any name - easier for typing wrong name and therefore possibly making it harder to maintain
 
-### CanvasProps
+### Type helpers
+
+Improved / simplified type handling
+
+#### Uniform - CanvasProps
 
 A Generic, which helps to define the Component props for Canvas components.
-See [text](lib/typeHelpers.ts).
+See [uniform typeHelpers](integrations/uniform/typeHelpers.ts).
 
-### Async props helper
+#### Nextjs - Async props
 
 - ✅ `lib\typeHelpers.ts` holds some generic type helper and props function for simpler handling of async props on async server components. Simpler resolving and type handling options.
+See [nextjs typeHelpers](integrations/nextjs/typeHelpers.ts).
 
 ## Future
 

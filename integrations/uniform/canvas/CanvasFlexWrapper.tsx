@@ -1,6 +1,6 @@
 import FlexWrapper, { FlexWrapperProps } from '@/components/common/FlexWrapper';
 import { UniformSlot } from '@uniformdev/canvas-next-rsc/component';
-import { CanvasProps } from '../uniformTypes';
+import { CanvasProps } from '../typeHelpers';
 
 type Parameters = {};
 type SlotNames = 'content';
