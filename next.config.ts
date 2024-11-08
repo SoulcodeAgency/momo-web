@@ -1,10 +1,11 @@
+import type { NextConfig } from 'next';
+
 const { withUniformConfig } = require('@uniformdev/canvas-next-rsc/config');
 const withVercelToolbar = require('@vercel/toolbar/plugins/next')();
 
 const { POSTHOG_NEXT_CONFIG_REWRITES } = require('./integrations/posthog/config');
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [],
   },
@@ -18,4 +19,4 @@ const nextConfig = {
   // },
 };
 
-module.exports = withVercelToolbar(withUniformConfig(nextConfig));
+export default withVercelToolbar(withUniformConfig(nextConfig));
