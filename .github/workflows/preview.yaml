@@ -26,15 +26,9 @@ jobs:
         run: echo ${{ steps.deploy.outputs.deployment_output }}
       - name: Post Deployment URL to PR
         if: success()
-        uses: actions/github-script@v4
+        uses: thollander/actions-comment-pull-request@v3.0.1
         with:
-          script: |
-            const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
-            const prNumber = context.payload.pull_request.number;
-            const deploymentOutput = '${{ steps.deploy.outputs.deployment_output }}';
-            github.issues.createComment({
-              owner,
-              repo,
-              issue_number: prNumber,
-              body: `The deployment is complete! You can view the preview here: ${deploymentOutput}`
-            });
+          comment-tag: deployment-url
+          message: |
+            Preview deployed ! :rocket:
+            ${{ steps.deploy.outputs.deployment_output }}
