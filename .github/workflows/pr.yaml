@@ -1,4 +1,7 @@
-name: PR Testing
+name: PullRequest - Vercel Preview Deployment
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   pull_request:
 
@@ -7,12 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: PR reference
+      - name: Branch / PR reference
         run: echo ${{ github.ref_name }}
+      - name: Install Vercel CLI
+        run: npm install --global vercel@canary
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        id: deploy
+        run: |
+          DEPLOYMENT_OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes)
+          echo "deployment_output=$DEPLOYMENT_OUTPUT" >> $GITHUB_OUTPUT
       - name: Post Deployment URL to PR
-        if: success()
+        if: github.event_name == 'pull_request' && success()
         uses: thollander/actions-comment-pull-request@v3.0.1
         with:
           comment-tag: deployment-url
           message: |
             Preview deployed ! :rocket:
+            ${{ steps.deploy.outputs.deployment_output }}

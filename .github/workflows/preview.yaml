@@ -1,4 +1,4 @@
-name: GitHub Actions Vercel Preview Deployment
+name: Branch push - Vercel Preview Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -6,7 +6,6 @@ on:
   push:
     branches-ignore:
       - main
-  pull_request:
 
 jobs:
   Deploy-Preview:
@@ -23,14 +22,4 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         id: deploy
-        run: |
-          DEPLOYMENT_OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes)
-          echo "deployment_output=$DEPLOYMENT_OUTPUT" >> $GITHUB_OUTPUT
-      - name: Post Deployment URL to PR
-        if: github.event_name == 'pull_request' && success()
-        uses: thollander/actions-comment-pull-request@v3.0.1
-        with:
-          comment-tag: deployment-url
-          message: |
-            Preview deployed ! :rocket:
-            ${{ steps.deploy.outputs.deployment_output }}
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes
