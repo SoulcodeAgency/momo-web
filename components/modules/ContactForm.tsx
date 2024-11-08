@@ -16,7 +16,7 @@ export default function ContactForm() {
     <form action={formAction} key={state?.resetKey} className="space-y-8">
       <div className="grid grid-cols-2 gap-4">
         <div className="grid gap-2">
-          <Label htmlFor="first-name">Name</Label>
+          <Label htmlFor="name">Name</Label>
           <Input name="name" id="name" placeholder="Enter your name" required />
         </div>
         <div className="grid gap-2">
@@ -25,7 +25,7 @@ export default function ContactForm() {
         </div>
       </div>
       <div className="grid gap-2">
-        <Label htmlFor="last-name">Message</Label>
+        <Label htmlFor="message">Message</Label>
         <Input id="message" name="message" placeholder="Your Message..." required />
       </div>
       <Button type="submit">Send Message</Button>
