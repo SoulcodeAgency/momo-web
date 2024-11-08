@@ -11,7 +11,7 @@ jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Branch / PR reference
         run: echo ${{ github.ref_name }}
       - name: Install Vercel CLI
