@@ -17,16 +17,16 @@ export default function ContactForm() {
       <div className="grid grid-cols-2 gap-4">
         <div className="grid gap-2">
           <Label htmlFor="name">Name</Label>
-          <Input name="name" id="name" placeholder="Enter your name" required />
+          <Input name="name" id="name" placeholder="Enter your name" autoComplete="name" required />
         </div>
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" name="email" type="email" placeholder="m@example.com" required />
+          <Input id="email" name="email" type="email" placeholder="m@example.com" autoComplete="email" required />
         </div>
       </div>
       <div className="grid gap-2">
         <Label htmlFor="message">Message</Label>
-        <Input id="message" name="message" placeholder="Your Message..." required />
+        <Input id="message" name="message" placeholder="Your Message..." autoComplete="off" required />
       </div>
       <Button type="submit">Send Message</Button>
     </form>
