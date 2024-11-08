@@ -20,10 +20,10 @@ jobs:
       - name: Deploy Project Artifacts to Vercel
         id: deploy
         run: |
-          DEPLOYMENT_OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --confirm)
-          echo "$DEPLOYMENT_OUTPUT" >> $GITHUB_OUTPUT
+          DEPLOYMENT_OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes)
+          echo "deployment_output=$DEPLOYMENT_OUTPUT" >> $GITHUB_OUTPUT
       - name: test output
-        run: echo ${{ steps.deploy.outputs }}
+        run: echo ${{ steps.deploy.outputs.deployment_output }}
       - name: Post Deployment URL to PR
         if: success()
         uses: actions/github-script@v4
@@ -31,7 +31,7 @@ jobs:
           script: |
             const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
             const prNumber = context.payload.pull_request.number;
-            const deploymentOutput = '${{ steps.deploy.outputs }}';
+            const deploymentOutput = '${{ steps.deploy.outputs.deployment_output }}';
             github.issues.createComment({
               owner,
               repo,
