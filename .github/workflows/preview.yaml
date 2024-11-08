@@ -3,14 +3,18 @@ env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
-  pull_request:
+  push:
     branches-ignore:
       - main
+  pull_request:
+
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Branch / PR reference
+        run: echo ${{ github.ref_name }}
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
       - name: Pull Vercel Environment Information
@@ -22,10 +26,8 @@ jobs:
         run: |
           DEPLOYMENT_OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes)
           echo "deployment_output=$DEPLOYMENT_OUTPUT" >> $GITHUB_OUTPUT
-      - name: PR reference
-        run: echo ${{ github.ref_name }}
       - name: Post Deployment URL to PR
-        if: success()
+        if: github.event_name == 'pull_request' && success()
         uses: thollander/actions-comment-pull-request@v3.0.1
         with:
           comment-tag: deployment-url
