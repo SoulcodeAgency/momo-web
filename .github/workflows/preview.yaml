@@ -19,3 +19,17 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Post Deployment URL to PR
+        if: success()
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+            const prNumber = context.payload.pull_request.number;
+            const deploymentUrl = '${{ steps.deploy.outputs.url }}';
+            github.issues.createComment({
+              owner,
+              repo,
+              issue_number: prNumber,
+              body: `The deployment is complete! You can view the preview here: ${deploymentUrl}`
+            });
