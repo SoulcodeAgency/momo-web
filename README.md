@@ -2,6 +2,10 @@
 
 This is the web project for momo, bascially a landing page to showcase its features and to promote it.
 
+## Status
+
+![Production Deployment](https://github.com/SoulcodeAgency/momo-web/actions/workflows/deploy.yml/badge.svg)
+
 ## Getting Started
 
 First, run the development server:

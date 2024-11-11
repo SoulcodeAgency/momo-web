@@ -1,17 +1,35 @@
-name: PullRequest - Vercel Preview Deployment
+name: Push branch - Vercel Preview Deployment
+
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
-  pull_request:
+  push:
+    branches-ignore:
+      - main
 
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Branch / PR reference
-        run: echo ${{ github.ref_name }}
+
+      # If this push event is related to a PR, cancel the job
+      # This is to prevent duplicate deployments, as the PR workflow will handle it
+      - uses: 8BitJonny/gh-get-current-pr@3.0.0
+        id: PR
+      - name: Exit here if this is a PR related event
+        if: steps.PR.outputs.pr_found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Ignoring PR related pushes. Cancelling job."
+          gh run cancel ${{ github.run_id }}
+          exit 0
+      # Exit 0: Otherwise the job will be reported as failed.
+      # The correct exit code would probably be 78, but it will be reported as failed as well.
+
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
       - name: Pull Vercel Environment Information
@@ -23,11 +41,3 @@ jobs:
         run: |
           DEPLOYMENT_OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes)
           echo "deployment_output=$DEPLOYMENT_OUTPUT" >> $GITHUB_OUTPUT
-      - name: Post Deployment URL to PR
-        if: github.event_name == 'pull_request' && success()
-        uses: thollander/actions-comment-pull-request@v3.0.1
-        with:
-          comment-tag: deployment-url
-          message: |
-            Preview deployed ! :rocket:
-            ${{ steps.deploy.outputs.deployment_output }}
