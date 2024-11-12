@@ -1,7 +1,7 @@
 'use server';
 
 import { sendRequest } from '@/server/actions';
-import { DefaultFormFeedback } from '@/lib/formTypes';
+import { DefaultFormFeedback } from '@/lib/nextjs/formTypes';
 
 const testWebhook = '/webhook-test/175cd025-7232-4bae-afbe-6a20b252a959';
 const prodWebhook = '/webhook/175cd025-7232-4bae-afbe-6a20b252a959';

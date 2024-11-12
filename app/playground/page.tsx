@@ -1,6 +1,6 @@
 import { resolveComponent } from '@/integrations/uniform/UniformComponentResolver';
 import { UniformPlayground, UniformPlaygroundProps } from '@uniformdev/canvas-next-rsc';
-import { type AsyncProps, extractProps } from '@/integrations/nextjs/typeHelpers';
+import { type AsyncProps, extractProps } from '@/lib/nextjs/typeHelpers';
 
 export const dynamic = 'force-static';
 
