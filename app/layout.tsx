@@ -5,10 +5,9 @@ import './globals.css';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { Suspense } from 'react';
 import { initializeComponentsMap } from '@/integrations/uniform/UniformComponentResolver';
-import { PHProvider } from '@/integrations/posthog/PostHogProvider';
-import { CookiePreferencesProvider } from '@/lib/cookie/CookiePreferencesProvider';
 import CookiePreferencesIntegration from '@/lib/cookie/components/CookiePreferencesIntegration';
 import PostHogPageView from '@/integrations/posthog/PostHogPageView';
+import AppProviders from '@/contexts/AppProviders';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -36,23 +35,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <PHProvider>
-        <CookiePreferencesProvider>
-          <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
-            <Suspense>
-              <PostHogPageView />
-            </Suspense>
+      <AppProviders>
+        <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
 
-            <UniformContext>{children}</UniformContext>
+          <UniformContext>{children}</UniformContext>
 
-            <Suspense fallback={<p>Loading Vercel Toolbar ...</p>}>
-              <VercelToolbar />
-            </Suspense>
+          <Suspense fallback={<p>Loading Vercel Toolbar ...</p>}>
+            <VercelToolbar />
+          </Suspense>
 
-            <CookiePreferencesIntegration />
-          </body>
-        </CookiePreferencesProvider>
-      </PHProvider>
+          <CookiePreferencesIntegration />
+        </body>
+      </AppProviders>
     </html>
   );
 }
