@@ -1,6 +1,6 @@
 'use server';
 
-import getRuntimeEnv from '@/lib/env/env';
+import getRuntimeEnv from '@/lib/env/getRuntimeEnv';
 import { SERVICE_HOSTS } from '@/lib/env/types';
 
 export async function sendRequest<T>({
