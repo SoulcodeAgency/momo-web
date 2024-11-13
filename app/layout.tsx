@@ -6,8 +6,8 @@ import { VercelToolbar } from '@vercel/toolbar/next';
 import { Suspense } from 'react';
 import { initializeComponentsMap } from '@/integrations/uniform/UniformComponentResolver';
 import { PHProvider } from '@/integrations/posthog/PostHogProvider';
-import { CookiePreferencesProvider } from '@/integrations/cookie/CookiePreferencesProvider';
-import CookiePreferencesIntegration from '@/integrations/cookie/components/CookiePreferencesIntegration';
+import { CookiePreferencesProvider } from '@/lib/cookie/CookiePreferencesProvider';
+import CookiePreferencesIntegration from '@/lib/cookie/components/CookiePreferencesIntegration';
 import PostHogPageView from '@/integrations/posthog/PostHogPageView';
 
 const geistSans = localFont({

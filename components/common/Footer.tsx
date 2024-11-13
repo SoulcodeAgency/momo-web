@@ -1,4 +1,4 @@
-import ShowCookiePreferences from '@/integrations/cookie/components/ShowCookiePreferences';
+import ShowCookiePreferences from '@/lib/cookie/components/ShowCookiePreferences';
 import Link from 'next/link';
 
 export default function Footer() {

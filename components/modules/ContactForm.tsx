@@ -1,7 +1,7 @@
 'use client';
 
 import { contactFormAction } from './ContactForm.actions';
-import { initialState } from '@/lib/formTypes';
+import { initialState } from '@/lib/nextjs/formTypes';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Button } from '../ui/button';

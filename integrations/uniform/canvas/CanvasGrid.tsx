@@ -1,6 +1,6 @@
 import { UniformSlot } from '@uniformdev/canvas-next-rsc/component';
 import { CanvasProps } from '../typeHelpers';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/tailwind/tailwindClassName';
 
 type Parameters = { mdColumns: number };
 type SlotNames = 'content';
