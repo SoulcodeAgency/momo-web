@@ -39,6 +39,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: success
           log_url: ${{ steps.deploy.outputs.deployment_output }}
+          description: https://momo-web.vercel.app
       - name: Update Deployment Status to Failure
         if: failure()
         uses: octokit/request-action@v2.x
