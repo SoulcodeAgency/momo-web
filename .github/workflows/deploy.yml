@@ -18,7 +18,7 @@ jobs:
           route: POST /repos/${{ github.repository }}/deployments
           ref: ${{ github.sha }}
           environment: production
-          required_contexts: []
+          required_contexts: '[]'
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
