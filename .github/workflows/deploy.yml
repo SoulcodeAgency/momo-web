@@ -1,4 +1,4 @@
-name: PROD - Vercel Production Deployment
+[]name: PROD - Vercel Production Deployment
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -18,7 +18,7 @@ jobs:
           route: POST /repos/${{ github.repository }}/deployments
           ref: ${{ github.sha }}
           environment: production
-          required_contexts: false
+          required_contexts: []
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
