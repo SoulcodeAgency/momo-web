@@ -1,4 +1,4 @@
-name: PROD - Vercel Production Deployment
+name: PROD Deploy
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -9,8 +9,10 @@ on:
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Create GitHub Deployment
         uses: octokit/request-action@v2.x
         id: create_deployment
@@ -20,17 +22,22 @@ jobs:
           environment: Production
           required_contexts: '[]'
           token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
+
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy Project Artifacts to Vercel
         id: deploy
         run: |
           DEPLOYMENT_OUTPUT=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} --yes)
           echo "deployment_output=$DEPLOYMENT_OUTPUT" >> $GITHUB_OUTPUT
+
       - name: Update Deployment Status to Success
         if: success()
         uses: octokit/request-action@v2.x
@@ -40,6 +47,7 @@ jobs:
           state: success
           log_url: ${{ steps.deploy.outputs.deployment_output }}
           description: https://momo-web.vercel.app
+
       - name: Update Deployment Status to Failure
         if: failure()
         uses: octokit/request-action@v2.x
