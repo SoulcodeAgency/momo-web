@@ -1,4 +1,4 @@
-name: PullRequest - Vercel Preview Deployment
+name: PR
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Create GitHub Deployment
         uses: octokit/request-action@v2.x
         id: create_deployment
@@ -21,22 +22,28 @@ jobs:
           environment: Preview
           required_contexts: '[]'
           token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
+
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Build Project Artifacts
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy Project Artifacts to Vercel
         id: deploy
         run: |
           DEPLOYMENT_OUTPUT=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --yes)
           echo "deployment_output=$DEPLOYMENT_OUTPUT" >> $GITHUB_OUTPUT
+
       - name: Get current time
         id: get-time
         run: |
           formatted_time="$(TZ=Europe/Zurich date '+%Y-%m-%d %H:%M')"
           echo "current_time=${formatted_time}" >> $GITHUB_OUTPUT
+
       - name: 'On success: Post Deployment URL to PR'
         if: steps.deploy.outcome == 'success'
         uses: thollander/actions-comment-pull-request@v3.0.1
@@ -45,6 +52,7 @@ jobs:
           message: |
             ✅ Preview deployed @ ${{ steps.get-time.outputs.current_time }}
             🚀 ${{ steps.deploy.outputs.deployment_output }}
+
       - name: 'On Failure: Post failed message'
         if: steps.deploy.outcome == 'failure'
         uses: thollander/actions-comment-pull-request@v3.0.1
@@ -53,6 +61,7 @@ jobs:
           message: |
             ❌ Preview deployment failed @ ${{ steps.get-time.outputs.current_time }}
             🚀 ${{ steps.deploy.outputs.deployment_output }}
+
       - name: Update Deployment Status to Success
         if: steps.deploy.outcome == 'success'
         uses: octokit/request-action@v2.x
@@ -61,6 +70,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: success
           log_url: ${{ steps.deploy.outputs.deployment_output }}
+
       - name: Update Deployment Status to Failure
         if: steps.deploy.outcome == 'failure'
         uses: octokit/request-action@v2.x
