@@ -13,9 +13,11 @@ const LinkList: React.FC<LinkListProps> = ({ links }) => {
   return (
     <>
       {links.map((link, index) => (
-        <Link key={index} className="text-sm font-medium hover:underline underline-offset-4" href={link.href}>
-          {link.text}
-        </Link>
+        <div key={index} className="gradient-text">
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href={link.href}>
+            {link.text}
+          </Link>
+        </div>
       ))}
     </>
   );

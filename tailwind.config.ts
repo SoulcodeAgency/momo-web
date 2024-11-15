@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: 'rgb(13 47 59)',
+        primary: '#001529',
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
