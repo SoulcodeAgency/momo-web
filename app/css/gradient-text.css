@@ -1,0 +1,52 @@
+﻿/* Variables */
+:root {
+  --color-active: #33b7a3;
+  --text-gradient-start: #4191dc;
+  --text-gradient-end: #33b7a3;
+  --gradient-start: #3e5f95;
+  --gradient-end: #3276b4;
+}
+
+/* Special gradient text */
+.gradient-text {
+  font-size: 20px;
+
+  a {
+    font-size: 20px;
+  }
+
+  font-weight: 500;
+  background: linear-gradient(to right, var(--text-gradient-start) 40%, var(--text-gradient-end) 60%);
+  background-size: 150%;
+  background-color: unset;
+  background-position-x: left;
+
+  /* Text Background effect */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+
+  transition: background ease-in-out 200ms;
+
+  /* Move background a bit to the left when hovering */
+  &:hover {
+    background-position-x: 75%;
+  }
+
+  /* For the active/focus state, we replace the gradient with a simpel color */
+  a:focus,
+  a:active,
+  &:active {
+    background-color: var(--color-active);
+    background: var(--color-active);
+    /* Adding kind of Glow effect */
+    text-shadow: 0px 0px 10px var(--color-active);
+
+    /* Text Background effect */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+  }
+}

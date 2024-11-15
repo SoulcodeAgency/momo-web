@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("css/gradient-text.css");
+
 body {
   font-synthesis: none;
 }
 
-/* TODO: Investigate why layer rules did not work out as expected */
 @layer base {
   :root {
     --radius: 0.5rem;
