@@ -7,6 +7,7 @@ const { POSTHOG_NEXT_CONFIG_REWRITES } = require('./integrations/posthog/config'
 
 const nextConfig: NextConfig = {
   images: {
+    domains: ['img.uniform.global'],
     remotePatterns: [],
   },
   async rewrites() {
