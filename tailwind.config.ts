@@ -36,8 +36,13 @@ const config: Config = {
   },
   safelist: [
     {
+      // CanvasGrid.tsx
       pattern: /grid-cols-*/,
       variants: ['md'],
+    },
+    {
+      // CanvasRichText.tsx
+      pattern: /text-(left|center|right|justify)/,
     },
   ],
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
