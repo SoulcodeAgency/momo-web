@@ -4,14 +4,15 @@ import PostHogClient from '@/integrations/posthog/posthogClient.server';
 import Link from 'next/link';
 import { type PageParameters } from '@uniformdev/canvas-next-rsc';
 import { type AsyncProps, extractProps } from '@/lib/nextjs/typeHelpers';
+import { getTranslations } from 'next-intl/server';
 
 // Uncomment to statically render routes at build time
 // export { generateStaticParams } from '@uniformdev/canvas-next-rsc';
 
 export default async function Home(asyncProps: AsyncProps<PageParameters>) {
   const props = await extractProps(asyncProps);
-
   const route = await retrieveRoute(props);
+  const t = await getTranslations('Page');
 
   // TODO: Posthog flags integration is just an example for now:
   const posthog = PostHogClient();
@@ -32,7 +33,7 @@ export default async function Home(asyncProps: AsyncProps<PageParameters>) {
       />
 
       {/* Posthog server side Flag example */}
-      {flags['main-cta'] && <Link href="http://posthog.com/">Go to PostHog</Link>}
+      {flags['main-cta'] && <Link href="http://posthog.com/">{t('PostHog.GoTo')}</Link>}
     </>
   );
 }

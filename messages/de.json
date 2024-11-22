@@ -1,5 +1,68 @@
 {
   "ContactForm": {
-    "name": "Name"
+    "Email": {
+      "Label": "E-Mail",
+      "Placeholder": "deine_email@adresse.com"
+    },
+    "Name": {
+      "Label": "Name",
+      "Placeholder": "Bitte gib deinen Namen an"
+    },
+    "Message": {
+      "Label": "Nachricht",
+      "Placeholder": "Deine Nachricht..."
+    },
+    "SubmitButton": {
+      "Text": "Nachricht abschicken"
+    }
+  },
+  "Layout": {
+    "VercelToolbar": {
+      "Loading": "Vercel Toolbar wird geladen ..."
+    }
+  },
+  "Page": {
+    "PostHog": {
+      "GoTo": "Zu PostHog gehen"
+    }
+  },
+  "Footer": {
+    "Company": "Soulcode AG.",
+    "Rights": "Alle Rechte vorbehalten.",
+    "TermsOfService": "Bedingungen der Dienstleistung",
+    "Privacy": "Datenschutz",
+    "CopyrightSign": "©"
+  },
+  "Header": {
+    "Name": "Momo"
+  },
+  "Dialog": {
+    "Close": "Schliessen"
+  },
+  "CookieBanner": {
+    "Description": "Diese Website verwendet Cookies, um Ihre Erfahrung zu messen und zu verbessern.",
+    "More": "Mehr erfahren",
+    "OptOut": "Opt-out",
+    "Accept": "Akzeptieren"
+  },
+  "CookiePreferences": {
+    "Title": "Cookie Preferences",
+    "Description": "Wir verwenden Cookies, um Ihr Website-Erlebnis zu verbessern. Die \"unbedingt notwendigen\" Cookies sind erforderlich, damit die Website funktioniert.",
+    "Necessary": {
+      "Title": "Streng notwendige Cookies",
+      "Description": "Dies sind die Cookies, die für das Funktionieren der Website erforderlich sind."
+    },
+    "Analytics": {
+      "Title": "Produktanalyse / Tracking-Cookies",
+      "Description": "Wir verwenden Analyse-Cookies, um zu verstehen, wie Sie unser Produkt nutzen, und um bessere Erfahrungen zu entwickeln."
+    },
+    "Allow": "Erlauben",
+    "Save": "Aktuelle Einstellungen speichern"
+  },
+  "ShowCookiePreferences": {
+    "Text": "Cookie-Einstellungen"
+  },
+  "PostHog": {
+    "GoTo": "Gehe zu Posthog"
   }
 }
