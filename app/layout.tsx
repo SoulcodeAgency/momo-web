@@ -8,6 +8,8 @@ import { initializeComponentsMap } from '@/integrations/uniform/UniformComponent
 import CookiePreferencesIntegration from '@/lib/cookie/components/CookiePreferencesIntegration';
 import PostHogPageView from '@/integrations/posthog/PostHogPageView';
 import AppProviders from '@/contexts/AppProviders';
+import { useTranslations } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -28,13 +30,17 @@ export async function generateMetadata() {
   return metadata;
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
+  const t = useTranslations();
+
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang={locale} className="!scroll-smooth">
       <AppProviders>
         <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
           <Suspense>
