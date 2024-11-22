@@ -34,7 +34,12 @@
     "CopyrightSign": "©"
   },
   "Header": {
-    "Name": "Momo"
+    "Name": "Momo",
+    "Nav": {
+      "Features": "Features",
+      "Pricing": "Preis",
+      "Contact": "Kontakt"
+    }
   },
   "Dialog": {
     "Close": "Schliessen"
@@ -46,7 +51,7 @@
     "Accept": "Akzeptieren"
   },
   "CookiePreferences": {
-    "Title": "Cookie Preferences",
+    "Title": "Cookie-Einstellungen",
     "Description": "Wir verwenden Cookies, um Ihr Website-Erlebnis zu verbessern. Die \"unbedingt notwendigen\" Cookies sind erforderlich, damit die Website funktioniert.",
     "Necessary": {
       "Title": "Streng notwendige Cookies",
@@ -57,7 +62,7 @@
       "Description": "Wir verwenden Analyse-Cookies, um zu verstehen, wie Sie unser Produkt nutzen, und um bessere Erfahrungen zu entwickeln."
     },
     "Allow": "Erlauben",
-    "Save": "Aktuelle Einstellungen speichern"
+    "Save": "Einstellungen speichern"
   },
   "ShowCookiePreferences": {
     "Text": "Cookie-Einstellungen"

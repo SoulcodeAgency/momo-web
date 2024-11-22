@@ -28,9 +28,9 @@ export default function Header({ children }: HeaderProps) {
           <nav className="flex gap-4 sm:gap-6">
             <LinkList
               links={[
-                { href: '/#features', text: 'Features' },
-                { href: '/#pricing', text: 'Pricing' },
-                { href: '/#contact', text: 'Contact' },
+                { href: '/#features', text: t('Nav.Features') },
+                { href: '/#pricing', text: t('Nav.Pricing') },
+                { href: '/#contact', text: t('Nav.Contact') },
               ]}
             />
 
