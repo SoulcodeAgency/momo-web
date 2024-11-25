@@ -2,12 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import LinkList from './LinkList';
 import { ReactNode } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface HeaderProps {
   children?: ReactNode;
 }
 
 export default function Header({ children }: HeaderProps) {
+  const t = useTranslations('Header');
   return (
     <header className="bg-primary text-white h-16 w-full">
       <div className="fixed top-0 left-0 right-0 z-50 bg-primary border-b shadow-sm">
@@ -21,14 +23,14 @@ export default function Header({ children }: HeaderProps) {
               height={40}
               priority
             />
-            <span className="ml-2 text-lg font-bold">Momo</span>
+            <span className="ml-2 text-lg font-bold">{t('Name')}</span>
           </Link>
           <nav className="flex gap-4 sm:gap-6">
             <LinkList
               links={[
-                { href: '/#features', text: 'Features' },
-                { href: '/#pricing', text: 'Pricing' },
-                { href: '/#contact', text: 'Contact' },
+                { href: '/#features', text: t('Nav.Features') },
+                { href: '/#pricing', text: t('Nav.Pricing') },
+                { href: '/#contact', text: t('Nav.Contact') },
               ]}
             />
 

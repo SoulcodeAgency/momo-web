@@ -8,6 +8,7 @@ import { initializeComponentsMap } from '@/integrations/uniform/UniformComponent
 import CookiePreferencesIntegration from '@/lib/cookie/components/CookiePreferencesIntegration';
 import PostHogPageView from '@/integrations/posthog/PostHogPageView';
 import AppProviders from '@/contexts/AppProviders';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -28,13 +29,16 @@ export async function generateMetadata() {
   return metadata;
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const t = await getTranslations('Layout');
+
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang={locale} className="!scroll-smooth">
       <AppProviders>
         <body className={`${geistSans.variable} ${geistMono.variable} font-sans`}>
           <Suspense>
@@ -43,7 +47,7 @@ export default function RootLayout({
 
           <UniformContext>{children}</UniformContext>
 
-          <Suspense fallback={<p>Loading Vercel Toolbar ...</p>}>
+          <Suspense fallback={<p>{t('VercelToolbar.Loading')}</p>}>
             <VercelToolbar />
           </Suspense>
 

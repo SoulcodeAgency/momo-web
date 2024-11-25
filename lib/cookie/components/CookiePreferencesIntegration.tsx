@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { useCookiePreferences } from "../CookiePreferencesProvider";
-import CookieBanner from "./CookieBanner";
-import CookiePreferences from "./CookiePreferences";
-import { getConsentSettingFromLocalStorage } from "../consent";
-import ShowCookiePreferences from "./ShowCookiePreferences";
-import { usePostHog } from "posthog-js/react";
+import { useEffect } from 'react';
+import { useCookiePreferences } from '../CookiePreferencesProvider';
+import CookieBanner from './CookieBanner';
+import CookiePreferences from './CookiePreferences';
+import { getConsentSettingFromLocalStorage } from '../consent';
+import ShowCookiePreferences from './ShowCookiePreferences';
+import { usePostHog } from 'posthog-js/react';
 
 export default function CookiePreferencesIntegration() {
   const {
@@ -34,20 +34,14 @@ export default function CookiePreferencesIntegration() {
   return (
     <>
       <ShowCookiePreferences />
-
       {isConsentLoaded && consent === null && (
         <CookieBanner
           consentValue={consent}
-          onPreferencesClick={() =>
-            setIsCookiePreferencesVisible(true)
-          }
+          onPreferencesClick={() => setIsCookiePreferencesVisible(true)}
           onConsentChange={handleConsentChange}
         />
       )}
-
-      {isConsentLoaded && (
-        <CookiePreferences />
-      )}
+      {isConsentLoaded && <CookiePreferences />}
     </>
   );
 }
