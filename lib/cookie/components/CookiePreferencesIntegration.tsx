@@ -29,7 +29,7 @@ export default function CookiePreferencesIntegration() {
   }, [consent]);
 
   useEffect(() => {
-    if (location.hostname === ProductionDomain) {
+    if (typeof window !== 'undefined' && window?.location?.hostname === ProductionDomain) {
       setOnProd(true);
     }
 
