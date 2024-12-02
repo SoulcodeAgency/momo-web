@@ -21,7 +21,7 @@ const config: CLIConfiguration = {
       signal: {},
       test: {},
     },
-    directory: './integrations/uniform/content',
+    directory: './content',
     format: 'yaml',
   },
 };
