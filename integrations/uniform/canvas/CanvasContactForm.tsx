@@ -1,5 +1,5 @@
 import { CanvasProps } from '../typeHelpers';
-import ContactForm from '@/components/modules/ContactForm';
+import ContactForm from '@/components/modules/ContactForm/ContactForm';
 
 type Parameters = {};
 type SlotNames = string;

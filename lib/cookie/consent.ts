@@ -1,5 +1,6 @@
 import { ConsentValue } from './consent-types';
 
+export const ProductionDomain = 'momo-web.vercel.app';
 const ConsentHash = 'momo-web_consent_v1';
 
 export const getConsentSettingFromLocalStorage = (): ConsentValue => {

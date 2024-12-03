@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookiePreferences } from '../CookiePreferencesProvider';
 import CookieBanner from './CookieBanner';
 import CookiePreferences from './CookiePreferences';
 import { getConsentSettingFromLocalStorage } from '../consent';
 import ShowCookiePreferences from './ShowCookiePreferences';
 import { usePostHog } from 'posthog-js/react';
+import { ProductionDomain } from '../consent';
 
 export default function CookiePreferencesIntegration() {
   const {
@@ -18,7 +19,9 @@ export default function CookiePreferencesIntegration() {
     handleConsentChange,
   } = useCookiePreferences();
 
+  const [onProd, setOnProd] = useState(false);
   const posthog = usePostHog();
+
   useEffect(() => {
     if (consent !== null) {
       posthog.set_config({ persistence: consent === 'all' ? 'localStorage+cookie' : 'memory' });
@@ -26,10 +29,19 @@ export default function CookiePreferencesIntegration() {
   }, [consent]);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window?.location?.hostname === ProductionDomain) {
+      setOnProd(true);
+    }
+
     // Get consent preference from local storage
     setConsent(getConsentSettingFromLocalStorage());
     setIsConsentLoaded(true);
   }, []);
+
+  // Do not render anything if we are not on production
+  if (!onProd) {
+    return null;
+  }
 
   return (
     <>

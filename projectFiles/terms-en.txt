@@ -1,0 +1,121 @@
+Terms of Use
+Last update: December 6th, 2023
+
+These terms govern your use of our website, product or services such as Chronologies or chronologies.io, (collectively, "Services") including any applications, User Files (as defined below), and any related documentation (collectively "Software"). By using the Services or Software, you agree to these terms. If you have entered into another agreement with us concerning specific Services or Software, then the terms of that agreement controls where it conflicts with these terms. As discussed further in Section 3 below, you retain all rights and ownership you have in your content that you make available through the Services. By using our services, you may upload or otherwise provide files and information and process such files and information (“User Files”) whether originally provided by you or processed by us via usage of our services.
+
+1. How this agreement works
+1.1 Choice of law
+Your relationship is with Soulcode AG, a company incorporated under the laws of Switzerland, with its registered offices at Kirchastrasse 175, 3084 Wabern, Switzerland, and the Services and Software are governed by the laws of Switzerland.
+
+1.2 Privacy
+The Privacy Policy governs any personal data you provide to us. By using the Services or Software you agree to the terms of the Privacy Policy.
+
+1.3 Application usage data
+Whilst using the Services, you will share information with Chronologies about how you use our application. This shared information is associated with your Chronologies account and allows us to provide you with a more personalized experience, while also helping us improve product quality and features.
+
+1.4 Modification
+We may modify, update, or discontinue the Services or Software (including portions of them or features) at any time without liability to you or anyone else. If we discontinue a Service in its entirety, then we will provide you with a pro rata refund for any prepaid, unused remainder of your subscription of the Service. To justify the pro rata refund, the Service must be actively in use by you.
+
+2. Use of Service
+2.1 License
+Subject to your compliance with these terms and the law, you may access and use the Services.
+
+2.2 Intellectual property
+We (and our licensors) remain the sole owner of all right, title, and interest in the Services and Software. We reserve all rights not granted under these terms. You are especially not allowed to resell any of our products, Software and/or Services.
+
+3. Your content
+3.1 Ownership
+You retain all rights and ownership of your content. We do not claim any ownership rights to your content.
+
+3.2 Our access
+We will only access, view, or listen to your content in limited ways. For example, in order to perform the Services, we may need to access, view, or listen to your content to (a) respond to support requests; (b) detect, prevent, or otherwise address fraud, security, unlawful, or technical issues; (c) improve our Services and (d) enforce these terms.
+
+4. Account information
+You are responsible for all activity that occurs via your account. Please notify Customer Support immediately if you become aware of any unauthorized use of your account. You may not (a) share your account information (except with an authorized account administrator) or (b) use another person’s account. Your account administrator may use your account information to manage your use and access to the Services.
+
+5. User conduct
+5.1 Responsible use
+You must use the Services responsibly.
+
+Children under 16 are not allowed to use Chronologies Services. If you are based in the European Economic Area or in any country with similar regulation, you may only use Chronologies Services if you are over the age at which you can provide consent to personal data processing under the laws of your country or if verifiable parental consent for your use of our Services has been provided to us. If you are a parent and you learn that your child is using our Services and you don’t want them to, please contact us.
+
+5.2 Misuse
+You must not misuse the Services, Software, or content that we provide to you as part of the Services or Software. For example, you must not: (a) copy, modify, host, sublicense, or resell the Services, Software, or content; (b) enable or allow others to use the Service, Software, or content using your account information; (c) use the content or Software included in the Services to construct any kind of database; (d) access or attempt to access the Services by any means other than the interface we provided or authorized; (e) circumvent any access or use restrictions put into place to prevent certain uses of the Services; (f) share content or engage in behavior that violates anyone’s Intellectual Property Right (“Intellectual Property Rights” means copyright, moral rights, trademark, trade dress, patent, trade secret, unfair competition, right of privacy, right of publicity, and any other proprietary rights.); (i) attempt to disable, impair, or destroy the Services, software, or hardware; (k) engage in chain letters, junk mails, pyramid schemes, spamming, or other unsolicited messages; (l) place advertisement of any products or services in the Services except with our prior written approval; (m) use any data mining or similar data gathering and extraction methods in connection with the Services; (n) violate applicable law; or (o) encrypt or protect files in countries where this is prohibited
+
+6. Your indemnification obligations
+You will indemnify us and our subsidiaries, affiliates, officers, agents, employees, partners, and licensors from any claim, demand, loss, or damages, including reasonable attorneys’ fees, arising out of or related to your content, your use of the Services or Software, or your violation of these terms.
+
+7. Disclaimers of warranties
+7.1 Warranties of Services and Software
+The Services and Software are provided “AS-IS”. To the maximum extent permitted by law, we disclaim and exclude any and all warranties express or implied, including the implied warranties of non-infringement, merchantability, or fitness for a particular purpose. We make no commitments about the content within the Services. We further disclaim and exclude any and all warranty that (a) the Services or Software will meet your requirements or will be constantly available, uninterrupted, timely, secure, or error-free; (b) the results that may be obtained from the use of the Services or Software will be effective, accurate, or reliable; (c) the quality of the Services or Software will meet your expectations; or that (d) any errors or defects in the Services or Software will be corrected.
+
+7.2 Liability for Services and Software, information and templates
+We specifically disclaim any liability for any actions resulting from your use of any Services or Software. You may use and access the Services or Software at your own discretion and risk, and you are solely responsible for any damage to your computer system or loss of data that results from the use and access of any Service or Software.
+
+The information provided by Soulcode AG (“we”, “us” or “our”) on https://www.chronologies.io ("website") is for information purposes only. All information on the website is provided in good faith, however under no circumstance shall we have any liability to you as a result of your use and/or your reliance on the information, templates, Services or Software.
+
+7.3 Storage of files
+We do not guarantee that stored files will always appear or be accessible to you. You should always have a copy of your file saved on your own device. We are not responsible for lost files and cannot be held liable for any data loss.
+
+8. Limitation of liability
+8.1 Liability of Soulcode
+Soulcode is not liable to you or anyone else for: (a) any loss of use, data, goodwill, or profits, whether or not foreseeable; and (b) any special, incidental, indirect, consequential, or punitive damages whatsoever (even if we have been advised of the possibility of these damages), including those (1) resulting from loss of use, data, or profits, whether or not foreseeable, (2) based on any theory of liability, including breach of contract or warranty, negligence or other tortious action, or (3) arising from any other claim arising out of or in connection with your use of or access to the Services or Software. Nothing in these subscription terms limits or excludes our liability for gross negligence, for our (or our employees’) intentional misconduct, or for death or personal injury.
+
+8.2 Limited liability
+Soulcode's total liability in any matter arising out of or related to these subscription terms is limited to whichever is higher: 100 CHF or the aggregate amount of fees that you paid for access to the Service and Software during the three-month period preceding the event giving rise to the liability. Even if there are limitations on liability or other provisions in these Subscription Terms, Soulcode retains the right to seek injunctive remedies (or equivalent urgent legal relief) in case of unauthorized access or use of the services by you or others.
+
+8.3 Limitation
+The limitations and exclusions in this Section 9 apply to the maximum extent permitted by law.
+
+9. Termination
+9.1 Termination by You
+You may stop using the Services at any time. Termination of your account does not relieve you of any obligation to pay any outstanding fees.
+
+If you do not want to accept new fees and prices, you may terminate the Services/this Agreement as stated above.
+
+9.2 Termination by Us
+Soulcode may terminate the Service/this agreement at any time. If we terminate these subscription terms for reasons other than for cause, then we will make a reasonable effort to notify you at least 30 days prior to termination via your account's main contact email address. We will provide instructions on how to retrieve your content. We may, at any time, terminate your right to use and access the Services or Software if: (a) you breach any provision of these terms (or act in a manner that clearly shows you do not intend to, or are unable to, comply with these terms); (b) you fail to make the timely payment of fees for the Software or Services; (c) we are required to do so by law (for example, if the provision of the Services or Software to you becomes unlawful); (d) we elect to discontinue the Services or Software, in whole or in part, (for example, if it becomes impractical for us to continue offering Services in your region due to change of law); or (e) there has been an extended period of inactivity in your free account.
+
+9.3 Survival
+Upon expiration or termination of these Subscription Terms, the following applies: (a) If you have been granted any licenses that are "perpetual," these licenses will continue even after termination. (b) Your responsibility to indemnify Soulcode continues. (c) Any disclaimers of warranty or limitations on Soulcode's liability will continue to apply. (d) Provisions for how disputes will be resolved continue to be in effect. (e) The Software may stop working when the Service ends, without any prior warning. Upon the expiration or termination of the Services, some or all of the Software may cease to operate without prior notice.
+
+10. Investigations / disclosure
+We may access or disclose information about you or your use of the Services (a) when it is required by law; (b) to respond to your requests for customer service support; or (c) when we, in our discretion, think it is necessary to protect the rights, property, or personal safety of us, our users, or the public.
+
+11. Dispute resolution
+11.1 Process
+You agree to first try to resolve any concern or dispute you may have by informally contacting us. If a dispute is not resolved within 30 days of your submission, you or Soulcode must resolve any claims relating to these terms, the Services, or the Software through final and binding arbitration. These claims may be asserted by you or Soulcode before the courts of the Canton of Berne, Switzerland.
+
+11.2 Rules
+If you or Soulcode decides to resort to arbitration as per above (12.1), the Swiss Chambers’ Arbitration Institution will administer the arbitration in Zürich under the Swiss Rules of International Arbitration. There will be one arbitrator that you and Soulcode both select. Arbitration will be conducted in English. Judgment upon the award rendered may be entered and will be enforceable in any court of competent jurisdiction having jurisdiction over parties.
+
+11.3 No class actions
+You may only resolve disputes with us on an individual basis, and may not bring a claim as a plaintiff or a class member in a class, consolidated, or representative action.
+
+12.4 Injunctive Relief
+Notwithstanding the foregoing, in the event of your or others’ unauthorized access to or use of the Services or content in violation of these terms, you agree that we are entitled to apply for injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction.
+
+12. Compliance with licenses
+If you are a business, company, or organization, then we may appoint our personnel to inspect your records to verify your usage of any and all Software or Services is in conformity with valid licenses from us. This potential inspection will take place no more than once every 12 months and will be coupled with a week of prior notice to you. Additionally, you must provide us with any and all records and requested information necessary to verify such conformity, within 30 days of our request. If the inspection discloses that not enough licenses are being paid for the Software or Services, you must immediately acquire any necessary licenses and subscriptions, and will be charged for any applicable retroactive maintenance and support fees. If the underpaid license fees exceed 5% of the value of the payable license fees, then you will also pay a reasonable sum for the cost of our licensing compliance inspection.
+
+13. Modification
+We may modify these terms or any additional terms that apply to a Service or Software in order to, for example, reflect changes to the law or changes to our Services or Software. You should look at the subscription terms regularly. Modification to these terms will be notified on this page. We will post notice of modified additional terms in the applicable Service or Software. By continuing to use or access the Services or Software after any revisions come into effect, you agree to be bound by the revised terms.
+
+14. Miscellaneous
+14.1 Notice to Soulcode
+You may send notices to us at the following address: Soulcode AG, c/o Rocket Office, Kirchstrasse 175, 3084 Wabern, Switzerland.
+
+14.2 Notice to you
+We may notify you by email, postings within the Services, or via other legally acceptable means.
+
+14.3 Entire agreement
+These terms constitute the entire agreement between you and us regarding your use of the Services and Software and supersede any prior agreements between you and us relating to the Services.
+
+14.4 Non-assignment
+You may not assign or otherwise transfer these terms, or your rights and obligations under these terms, in whole or in part, without our written consent. Any such attempt will be void. We may transfer our rights under these terms to a third party.
+
+14.5 Severability
+If a particular term is not enforceable, the unenforceability of that term will not affect any other terms.
+
+14.6 No waiver
+Our failure to enforce or exercise any of these terms is not a waiver of that section.

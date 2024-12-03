@@ -1,4 +1,4 @@
-import ShowCookiePreferences from '@/lib/cookie/components/ShowCookiePreferences';
+// import ShowCookiePreferences from '@/lib/cookie/components/ShowCookiePreferences';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -12,10 +12,10 @@ export default function Footer() {
           {t('CopyrightSign')} {currentYear} {t('Company')} {t('Rights')}
         </p>
         <nav className="flex gap-4 sm:gap-6 mt-4 sm:mt-0">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
+          <Link className="text-xs hover:underline underline-offset-4" href="/nutzungsbedingungen">
             {t('TermsOfService')}
           </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
+          <Link className="text-xs hover:underline underline-offset-4" href="/datenschutz">
             {t('Privacy')}
           </Link>
 
