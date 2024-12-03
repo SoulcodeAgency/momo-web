@@ -12,7 +12,7 @@ export default function Footer() {
           {t('CopyrightSign')} {currentYear} {t('Company')} {t('Rights')}
         </p>
         <nav className="flex gap-4 sm:gap-6 mt-4 sm:mt-0">
-          <Link className="text-xs hover:underline underline-offset-4" href="/dienstleistung">
+          <Link className="text-xs hover:underline underline-offset-4" href="/dienstleistungen">
             {t('TermsOfService')}
           </Link>
           <Link className="text-xs hover:underline underline-offset-4" href="/datenschutz">
