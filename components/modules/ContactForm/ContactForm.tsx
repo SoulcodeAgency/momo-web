@@ -7,6 +7,7 @@ import { Label } from '../../ui/label';
 import { Button } from '../../ui/button';
 import { useActionState } from 'react';
 import { useTranslations } from 'next-intl';
+import { Textarea } from '@/components/ui/textarea';
 
 const initialFormState = { ...initialState, name: '', email: '', message: '' };
 
@@ -35,7 +36,7 @@ export default function ContactForm() {
       </div>
       <div className="grid gap-2">
         <Label htmlFor="message">{t('Message.Label')}</Label>
-        <Input id="message" name="message" placeholder={t('Message.Placeholder')} autoComplete="off" required />
+        <Textarea id="message" name="message" placeholder={t('Message.Placeholder')} autoComplete="off" required />
       </div>
       <Button type="submit">{t('SubmitButton.Text')}</Button>
     </form>
