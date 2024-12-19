@@ -2,7 +2,7 @@
   "ContactForm": {
     "Email": {
       "Label": "E-Mail",
-      "Placeholder": "deine_email@adresse.com"
+      "Placeholder": "deine-email@adresse.com"
     },
     "Name": {
       "Label": "Name",
