@@ -15,7 +15,14 @@ export default function Dialog({ children }: DialogProps) {
   };
 
   const handleShow = () => {
-    dialogRef.current?.showModal();
+    // Fallback for browsers that don't support View Transitions:
+    if (!document.startViewTransition) {
+      dialogRef.current?.showModal();
+      return;
+    }
+
+    // With View Transitions:
+    const transition = document.startViewTransition(() => dialogRef.current?.showModal());
   };
 
   useEffect(() => {
@@ -36,9 +43,9 @@ export default function Dialog({ children }: DialogProps) {
     <>
       <dialog id="dialog" className="dialog" ref={dialogRef}>
         {children}
-        <button className="close" onClick={handleClose}>
+        {/* <button className="close" onClick={handleClose}>
           close
-        </button>
+        </button> */}
       </dialog>
 
       <div className="cursor-pointer" onClick={handleShow}>
